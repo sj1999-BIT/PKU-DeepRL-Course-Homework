@@ -2,12 +2,25 @@ from model import Q_agent
 import torch.optim as optim
 
 import random
-from replayDataBuffer import get_training_data
+from replayDataBuffer import get_training_data, get_reward_data
+from visual import plot_progress_data
+
+"""
+we need to do the following things
+1. save the trained model so that we can run it in the future
+2. added in the update function to transfer the weights over
+3. record down the loss function, reward and q-value output overtime.
+
+summary
+a full training pipeline and data collection pipeline. 
+"""
 
 if __name__=="__main__":
 
     # Initialize a list to store loss values
     loss_values = []
+    # initialize a list to store target_network performance
+    reward_values = []
 
     # initialise 2 agents
     q_agent = Q_agent()
@@ -28,7 +41,9 @@ if __name__=="__main__":
         optimizer.zero_grad()
 
         # get around 300 transitions
-        training_data = get_training_data(q_agent, num_games=3)
+        training_data = get_training_data(q_agent, num_games=10)
+
+        # print(len(training_data))
 
         # Randomly select 64 elements without replacement
         training_batch = random.sample(training_data, 64)
@@ -46,19 +61,26 @@ if __name__=="__main__":
         # update optimizer
         optimizer.step()
 
+        # modify target agent with the weights of the q_agent
+        target_agent.combine_weights(q_agent, ratio=0.999)
+
+        reward = get_reward_data(target_agent, num_games=10)
+
+        reward_values.append(reward)
 
 
-    # After training is complete, plot the loss graph
-    import matplotlib.pyplot as plt
 
-    plt.figure(figsize=(10, 6))
-    plt.plot(loss_values)
-    plt.title('Training Loss over Time')
-    plt.xlabel('Training Steps')
-    plt.ylabel('Loss')
-    plt.grid(True)
-    plt.savefig('loss_plot.png')
-    plt.show()
+    ##### save the weights
+    q_agent.save_weights("./naive/q_agent_weights.pth")
+    target_agent.save_weights("./naive/target_agent_weights.pth")
+
+    plot_progress_data(loss_values, save_plot=True)
+    plot_progress_data(reward_values, save_plot=True)
+
+
+
+
+
 
 
 

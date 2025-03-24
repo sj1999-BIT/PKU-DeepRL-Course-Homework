@@ -2,6 +2,7 @@
 Implement the DQN agent here
 '''
 import math
+import os.path
 
 import torch
 import torch.nn as nn
@@ -96,7 +97,7 @@ def preprocess_state(state):
 
 class Q_agent(nn.Module):
 
-    def __init__(self):
+    def __init__(self, load_path=None):
         # can take in different state inputs
         super(Q_agent, self).__init__()
 
@@ -114,6 +115,10 @@ class Q_agent(nn.Module):
 
         # map output index to actual
         self.action_map = {0: 0, 1: 2, 2: 3}
+
+        # Load weights if a path is provided
+        if load_path:
+            self.load_weights(load_path)
 
 
     def convert_raw_frames_to_input_state(self, input_raw_frames):
@@ -206,6 +211,90 @@ class Q_agent(nn.Module):
 
         return loss
 
+    def save_weights(self, save_path, title=None):
+        """
+        Save the model weights to the specified path
+
+        :param save_path: Path where the model weights will be saved
+        :param title: Optional title to be saved with the model weights
+        """
+
+        if not os.path.exists(os.path.dirname(save_path)):
+            os.makedirs(os.path.dirname(save_path))
+
+        save_dict = {
+            'state_dict': self.state_dict(),
+            'title': title
+        }
+        torch.save(save_dict, save_path)
+        print(f"Model weights saved to {save_path}" + (f" with title: {title}" if title else ""))
+
+    def load_weights(self, load_path):
+        """
+        Load model weights from the specified path
+
+        :param load_path: Path to the saved model weights
+        :return: The title of the loaded weights if available, None otherwise
+        """
+        try:
+            checkpoint = torch.load(load_path)
+
+            # Handle both formats: direct state_dict or dict with state_dict and title
+            if isinstance(checkpoint, dict) and 'state_dict' in checkpoint:
+                self.load_state_dict(checkpoint['state_dict'])
+                title = checkpoint.get('title')
+                print(f"Model weights loaded from {load_path}" + (f" with title: {title}" if title else ""))
+                # Move model to GPU if available
+                if torch.cuda.is_available():
+                    self.to('cuda')
+                return title
+            else:
+                # Handle legacy format (direct state_dict)
+                self.load_state_dict(checkpoint)
+                print(f"Model weights loaded from {load_path}")
+                # Move model to GPU if available
+                if torch.cuda.is_available():
+                    self.to('cuda')
+                return None
+        except Exception as e:
+            print(f"Error loading model weights: {e}")
+            return None
+
+    def combine_weights(self, other_agent, ratio=0.5):
+        """
+        Combine weights from another Q_agent with the current agent's weights using a specified ratio
+
+        :param other_agent: Another Q_agent whose weights will be combined with this agent
+        :param ratio: Weight given to the current agent's parameters (between 0 and 1)
+                     Current = ratio * current + (1 - ratio) * other
+        :return: self, for method chaining
+        """
+        if not isinstance(other_agent, Q_agent):
+            raise TypeError("other_agent must be an instance of Q_agent")
+
+        if not 0 <= ratio <= 1:
+            raise ValueError("ratio must be between 0 and 1")
+
+        # Get state dictionaries for both models
+        current_state_dict = self.state_dict()
+        other_state_dict = other_agent.state_dict()
+
+        # Ensure both models have the same parameters
+        if current_state_dict.keys() != other_state_dict.keys():
+            raise ValueError("Model architectures don't match")
+
+        # Create a new state dictionary with combined weights
+        combined_state_dict = {}
+
+        for key in current_state_dict.keys():
+            # Linear interpolation between the two weights
+            combined_state_dict[key] = current_state_dict[key] * ratio + other_state_dict[key] * (1 - ratio)
+
+        # Load the combined weights into the current model
+        self.load_state_dict(combined_state_dict)
+
+        print(f"Weights combined with ratio {ratio:.4f} (self) to {1 - ratio:.4f} (other)")
+        return self
 
 
 

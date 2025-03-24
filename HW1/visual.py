@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
+
 def plot_value_distribution(array, num_bins=10, title="Value Distribution"):
     """
     Plots a histogram/bar graph showing the distribution of values in an array.
@@ -48,6 +49,19 @@ def plot_value_distribution(array, num_bins=10, title="Value Distribution"):
     plt.tight_layout()
     plt.show()
 
+
+def plot_progress_data(data, save_plot=False):
+    # After training is complete, plot the loss graph
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(data)
+    plt.title('Training Loss over Time')
+    plt.xlabel('Training Steps')
+    plt.ylabel('Loss')
+    plt.grid(True)
+    if save_plot:
+        plt.savefig('loss_plot.png')
+    plt.show()
 
 # Example usage:
 if __name__ == "__main__":
