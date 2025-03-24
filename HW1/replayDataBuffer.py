@@ -15,7 +15,7 @@ gym.register_envs(ale_py)
 # Create Pong environment without rendering for faster data collection
 env = gym.make("ALE/Pong-v5", render_mode=None, obs_type="rgb")
 
-def get_reward_data(q_agent:Q_agent, num_games=10):
+def get_reward_data(q_agent, num_games=10):
     """
     Collect reward for playing 10 games
     :param q_agent: q_agent used to play the game
@@ -168,7 +168,7 @@ import matplotlib.pyplot as plt
 import os
 
 
-def get_training_data(q_agent: Q_agent, num_games=10, save_images=False, save_dir="state_images"):
+def get_training_data(q_agent, num_games=10, save_images=False, save_dir="state_images"):
     """
     Collect training data for DQN by playing Pong games and storing state transitions.
     Optionally saves images of states showing the 4 frames side by side.

@@ -65,6 +65,38 @@ def plot_progress_data(data, save_plot=False, plot_file_title=None):
         plt.savefig(plot_file_title)
     plt.show()
 
+
+def plot_frequency(A, B, save_plot=False):
+    # Count frequency of each value in B that appears in A
+    frequencies = []
+    for value in B:
+        frequency = np.sum(np.array(A) == value)
+        frequencies.append(frequency)
+
+    # Create bar graph
+    plt.figure(figsize=(10, 6))
+    bars = plt.bar(B, frequencies)
+
+    # Add labels and title
+    plt.xlabel('Values')
+    plt.ylabel('Frequency')
+    plt.title('Frequency of Values in Array A')
+
+    # Add frequency labels on top of bars
+    for bar, freq in zip(bars, frequencies):
+        height = bar.get_height()
+        plt.text(bar.get_x() + bar.get_width() / 2., height + 0.05,
+                 f'{freq}', ha='center', va='bottom')
+
+    # Display the plot
+    plt.xticks(B)
+    plt.tight_layout()
+    if save_plot:
+        plt.savefig("frequency.png")
+
+    plt.show()
+
+
 # Example usage:
 if __name__ == "__main__":
     # Generate a sample array with random values
