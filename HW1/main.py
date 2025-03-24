@@ -42,7 +42,7 @@ if __name__=="__main__":
     # set optimizer
     optimizer = optim.Adam(q_agent.parameters(), lr=0.001)
 
-    epoch_num = 10
+    epoch_num = 1000
 
     for epoch in range(epoch_num):
 
