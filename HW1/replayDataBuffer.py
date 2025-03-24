@@ -174,7 +174,7 @@ def get_training_data(q_agent, num_games=10, save_images=False, save_dir="state_
     Optionally saves images of states showing the 4 frames side by side.
 
     Args:
-        q_agent (Q_agent): The agent to use for action selection
+        q_agent : The agent to use for action selection
         num_games (int): Number of games to collect data from. Default is 10.
         save_images (bool): Whether to save images of states. Default is False.
         save_dir (str): Directory to save state images. Default is "state_images".

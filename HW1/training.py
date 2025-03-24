@@ -1,4 +1,4 @@
-from model import Q_agent, ImprovedQAgent
+from model import QAgentWithEpilsonAndMoreDepth
 import torch.optim as optim
 
 import random
@@ -24,10 +24,10 @@ if __name__=="__main__":
     reward_values = []
 
     # initialise 2 agents
-    q_agent = ImprovedQAgent()
+    q_agent = QAgentWithEpilsonAndMoreDepth()
     q_agent.to(device='cuda')
 
-    target_agent = ImprovedQAgent()
+    target_agent = QAgentWithEpilsonAndMoreDepth()
     target_agent.to(device='cuda')
 
 
@@ -42,7 +42,7 @@ if __name__=="__main__":
     # set optimizer
     optimizer = optim.Adam(q_agent.parameters(), lr=0.001)
 
-    epoch_num = 1000
+    epoch_num = 1
 
     for epoch in range(epoch_num):
 
@@ -56,12 +56,12 @@ if __name__=="__main__":
 
 
         # Randomly select 64 elements without replacement
-        training_batch = random.sample(training_data, 64)
+        # training_batch = random.sample(training_data, 64)
 
         # show how data distributed
         # plot_value_distribution([data[2] for data in training_batch])
 
-        loss_tensor = q_agent.loss_function(training_batch, target_agent)
+        loss_tensor = q_agent.loss_function(training_data, target_agent)
 
         loss_value = loss_tensor.item()
 

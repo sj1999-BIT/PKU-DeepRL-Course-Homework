@@ -107,7 +107,7 @@ def load_array_from_file(filename):
         with open(filename, 'r') as f:
             array = json.load(f)
         print(f"Array loaded from {filename}")
-        return array['data']
+        return array
     except Exception as e:
         print(f"Error loading array from {filename}: {e}")
         return []

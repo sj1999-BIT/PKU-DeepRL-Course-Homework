@@ -24,3 +24,12 @@ was unable to improve further.
 I aim to improve my results by application the following changes
 1. Replace Q-network with a greedy epilson agent so that the agent can explore other actions
 2. increase replay buffer size and data collected. Previously I was using only 10 games and sample 64 transitions from it. Now I will increase it to 100 games.
+
+model shown increase in variance, with the training loss decreasing slower.
+However, the agent still did not improve overtime. More changes were needed.
+
+### next 1000 epoch training
+
+Another possible improvement is the need to improve sampling.
+1. PER (Priority Experience Replay) implementation. Priortise sampling transitions that has the largest difference between what the model predicted Q-val and the actual Q-val.
+2. Increase depth of convolution.

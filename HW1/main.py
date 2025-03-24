@@ -19,13 +19,19 @@ if __name__=="__main__":
 
     # get around 300 transitions
     # each transition is recorded_cur_state, action, recorded_reward, q_val, recorded_next_state
-    training_data = get_training_data(q_agent, num_games=100)
+    # training_data = get_training_data(q_agent, num_games=100)
+    #
+    # action_arr = [data[1] for data in training_data]
+    #
+    # action_choice = [0,2,3]
+    #
+    # plot_frequency(action_arr, action_choice, save_plot=True)
 
-    action_arr = [data[1] for data in training_data]
+    loss_values = load_array_from_file("loss.json")
+    reward_values = load_array_from_file("reward.json")
 
-    action_choice = [0,2,3]
-
-    plot_frequency(action_arr, action_choice, save_plot=True)
+    plot_progress_data(loss_values, save_plot=True, plot_file_title="loss_plot.png")
+    plot_progress_data(reward_values, save_plot=True, plot_file_title="reward_plot.png")
 
 
 
