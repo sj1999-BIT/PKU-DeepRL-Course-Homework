@@ -4,6 +4,7 @@ import torch.optim as optim
 import random
 from replayDataBuffer import get_training_data, get_reward_data
 from visual import plot_progress_data
+from data import save_array_to_file, append_values_to_file, load_array_from_file
 
 """
 we need to do the following things
@@ -30,12 +31,22 @@ if __name__=="__main__":
     target_agent.to(device='cuda')
 
 
+    # generate 2 new JSON files to store the data
+    loss_value_filename = "loss.json"
+    save_array_to_file([], loss_value_filename)
+
+    reward_value_filename = "reward.json"
+    save_array_to_file([], reward_value_filename)
+
+
     # set optimizer
     optimizer = optim.Adam(q_agent.parameters(), lr=0.001)
 
-    epoch = 10
+    epoch_num = 10
 
-    for _ in range(epoch):
+    for epoch in range(epoch_num):
+
+        print(f"current epoch {epoch}")
 
         # one batch
         optimizer.zero_grad()
@@ -43,7 +54,6 @@ if __name__=="__main__":
         # get around 300 transitions
         training_data = get_training_data(q_agent, num_games=10)
 
-        # print(len(training_data))
 
         # Randomly select 64 elements without replacement
         training_batch = random.sample(training_data, 64)
@@ -51,13 +61,17 @@ if __name__=="__main__":
         # show how data distributed
         # plot_value_distribution([data[2] for data in training_batch])
 
-        loss = q_agent.loss_function(training_batch, target_agent)
+        loss_tensor = q_agent.loss_function(training_batch, target_agent)
+
+        loss_value = loss_tensor.item()
 
         # Store the loss value
-        loss_values.append(loss.item())  # .item() converts the tensor to a Python number
+        loss_values.append(loss_value)  # .item() converts the tensor to a Python number
+
+        append_values_to_file(loss_value, loss_value_filename)
 
         # backpropagate
-        loss.backward()
+        loss_tensor.backward()
         # update optimizer
         optimizer.step()
 
@@ -67,6 +81,7 @@ if __name__=="__main__":
         reward = get_reward_data(target_agent, num_games=10)
 
         reward_values.append(reward)
+        append_values_to_file(reward, reward_value_filename)
 
 
 
