@@ -228,9 +228,6 @@ def get_training_data(q_agent: Q_agent, num_games=10, save_images=False, save_di
     # Create progress bar to track data collection
     pbar = tqdm(range(num_games), ncols=100)
 
-    # Counter for image filenames
-    image_counter = 0
-
     for i in pbar:
         # Update progress bar description with current data size
         pbar.set_description(f"Getting DQN training data, sized {len(data_collected)}")
@@ -238,19 +235,16 @@ def get_training_data(q_agent: Q_agent, num_games=10, save_images=False, save_di
         # Initialize new game
         done = False
         obs, info = env.reset()  # BUG FIX: env.reset() returns (obs, info) in newer Gymnasium
+        obs, _, _, _, info = env.step(0)  # random step as it seems that the first frame has RGB problem
 
-        # Initialize initial state as 4 frames of all zeroes
-        for _ in range(4):
+        # Initialize initial state as 3 frames of all zeroes with the start frame
+        for _ in range(3):
             current_state.append(np.zeros_like(obs))
+        current_state.append(obs.copy())
 
         while not done:
             # Save a copy of current_state
             recorded_cur_state = current_state.copy()
-
-            # Save image of current state
-            if save_images:
-                save_state_image(recorded_cur_state, f"state_{image_counter}_current.png")
-                image_counter += 1
 
             # Get action from DQN agent
             input_state = np.array(current_state)
@@ -277,25 +271,29 @@ def get_training_data(q_agent: Q_agent, num_games=10, save_images=False, save_di
 
                 # Take action and observe result
                 obs, reward, terminated, truncated, info = env.step(action)  # BUG FIX: Unpack 5 values
-                done = terminated or truncated  # BUG FIX: Check both terminated and truncated
+                if reward != 0:
+                    done = True
 
             # Save transition if we gathered a complete next_state
             if len(next_state) == 4:
                 recorded_next_state = next_state.copy()
 
-                # Save image of next state
-                if save_images:
-                    save_state_image(recorded_next_state, f"state_{image_counter}_next.png")
+
 
                 data_collected.append([recorded_cur_state, action, recorded_reward, q_val, recorded_next_state])
 
             # Reset states for next transition
             next_state = deque(maxlen=4)
 
-            # Reinitiate current state
-            current_state = deque(maxlen=4)
-            for _ in range(4):
-                current_state.append(np.zeros_like(obs))
+    # Save images
+    if save_images:
+        # Counter for image filenames
+        image_counter = 0
+
+        for cur_state,_, _, _, next_state in data_collected:
+            save_state_image(cur_state, f"state_{image_counter}_current.png")
+            save_state_image(next_state, f"state_{image_counter}_next.png")
+            image_counter += 1
 
     return data_collected
 
