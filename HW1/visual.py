@@ -50,7 +50,7 @@ def plot_value_distribution(array, num_bins=10, title="Value Distribution"):
     plt.show()
 
 
-def plot_progress_data(data, save_plot=False):
+def plot_progress_data(data, save_plot=False, plot_file_title=None):
     # After training is complete, plot the loss graph
 
     plt.figure(figsize=(10, 6))
@@ -60,7 +60,9 @@ def plot_progress_data(data, save_plot=False):
     plt.ylabel('Loss')
     plt.grid(True)
     if save_plot:
-        plt.savefig('loss_plot.png')
+        if plot_file_title is None:
+            plot_file_title = "plot.png"
+        plt.savefig(plot_file_title)
     plt.show()
 
 # Example usage:

@@ -89,8 +89,8 @@ if __name__=="__main__":
     q_agent.save_weights("./naive/q_agent_weights.pth")
     target_agent.save_weights("./naive/target_agent_weights.pth")
 
-    plot_progress_data(loss_values, save_plot=True)
-    plot_progress_data(reward_values, save_plot=True)
+    plot_progress_data(loss_values, save_plot=True, plot_file_title="loss_plot.png")
+    plot_progress_data(reward_values, save_plot=True, plot_file_title="reward_plot.png")
 
 
 
