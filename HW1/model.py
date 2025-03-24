@@ -47,7 +47,7 @@ def preprocess_state(state):
     if len(shape) == 2 and shape[1] == 128:
         # 1D vector input (4, 128)
         processed_frames = []
-        for i in range(4):
+        for i in range(shape[0]):
             # Reshape 1D vector to 2D (8, 16)
             frame = state[i].reshape(8, 16)
             # Resize to (84, 84)
@@ -55,24 +55,18 @@ def preprocess_state(state):
 
             processed_frames.append(frame)
 
-        # Stack and set channels to 1
-        processed_state = np.stack(processed_frames, axis=0)
-
     elif len(shape) == 3 and shape[1:] == (210, 160):
         # 2D grayscale input (4, 210, 160)
         processed_frames = []
-        for i in range(4):
+        for i in range(shape[0]):
             # Resize to (84, 84)
             frame = cv2.resize(state[i], (168, 168), interpolation=cv2.INTER_AREA)
             processed_frames.append(frame)
 
-        # Stack and set channels to 1
-        processed_state = np.stack(processed_frames, axis=0)
-
     elif len(shape) == 4 and shape[1:] == (210, 160, 3):
         # RGB input (4, 210, 160, 3)
         processed_frames = []
-        for i in range(4):
+        for i in range(shape[0]):
             # Resize to (84, 84) while keeping RGB channels
             frame = cv2.resize(state[i], (168, 168), interpolation=cv2.INTER_AREA)
 
@@ -83,11 +77,16 @@ def preprocess_state(state):
 
             processed_frames.append(frame)
 
-        # Stack and keep 3 channels
-        processed_state = np.stack(processed_frames, axis=0)
+
 
     else:
-        raise ValueError(f"Unsupported input shape: {shape}. Expected (4, 128), (4, 210, 160), or (4, 210, 160, 3)")
+        raise ValueError(f"Unsupported input shape: {shape}. Expected (x, 128), (x, 210, 160), or (x, 210, 160, 3)")
+
+    while len(processed_frames) < 4:
+        processed_frames.insert(0, np.zeros_like(processed_frames[0]))
+
+    # Stack and keep 3 channels
+    processed_state = np.stack(processed_frames, axis=0)
 
     # Normalize pixel values to [0, 1]
     processed_state = processed_state.astype(np.float32) / 255.0
@@ -117,6 +116,13 @@ class Q_agent(nn.Module):
         self.action_map = {0: 0, 1: 2, 2: 3}
 
 
+    def convert_raw_frames_to_input_state(self, input_raw_frames):
+        formatted_input = preprocess_state(input_raw_frames)  # format input into (4, 168, 168)
+
+        # Flatten the entire array into a single dimension
+        return torch.from_numpy(formatted_input).float().to(device='cuda')
+
+
 
     def forward(self, input_raw_frames):
         """
@@ -124,10 +130,8 @@ class Q_agent(nn.Module):
         :return: an int from (0, 2, 3), indicating action to take.
         """
 
-        formatted_input = preprocess_state(input_raw_frames) # format input into (4, 168, 168)
-
-        # Flatten the entire array into a single dimension
-        x = torch.from_numpy(formatted_input).float().to(device='cuda')
+        # convert raw frames into model inputs
+        x = self.convert_raw_frames_to_input_state(input_raw_frames)
 
         x = self.conv1(x)
         x = self.conv2(x)
