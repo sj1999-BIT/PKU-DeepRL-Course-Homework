@@ -317,7 +317,7 @@ def validate_training_data(data_collected):
     invalid_indices = []
     error_messages = []
 
-    for i, (current_state, action, reward, next_state) in enumerate(data_collected):
+    for i, (current_state, action, reward, q_val, next_state) in enumerate(data_collected):
         is_valid = True
 
         # Check current_state
