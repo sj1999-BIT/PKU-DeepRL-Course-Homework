@@ -33,3 +33,5 @@ However, the agent still did not improve overtime. More changes were needed.
 Another possible improvement is the need to improve sampling.
 1. PER (Priority Experience Replay) implementation. Priortise sampling transitions that has the largest difference between what the model predicted Q-val and the actual Q-val.
 2. Increase depth of convolution.
+
+Actually shows improvement, agent could be able to learn the game given sufficient time.

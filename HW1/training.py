@@ -42,7 +42,7 @@ if __name__=="__main__":
     # set optimizer
     optimizer = optim.Adam(q_agent.parameters(), lr=0.001)
 
-    epoch_num = 1
+    epoch_num = 1000
 
     for epoch in range(epoch_num):
 
@@ -52,7 +52,7 @@ if __name__=="__main__":
         optimizer.zero_grad()
 
         # get around 300 transitions
-        training_data = get_training_data(q_agent, num_games=30)
+        training_data = get_training_data(q_agent, num_games=50)
 
 
         # Randomly select 64 elements without replacement

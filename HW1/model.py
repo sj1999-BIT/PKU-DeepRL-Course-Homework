@@ -663,10 +663,18 @@ class QAgentWithEpilsonAndMoreDepth(nn.Module):
         next_states = [np.array(data[-1]) for data in replay_data]
 
         # Forward current states through our model to get predicted Q-values
-        predicted_q_values = [[data[3] for data in replay_data]]
+        # predicted_q_tensor = torch.stack(predicted_q_values)
+        # Forward current states through our model to get predicted Q-values
+        predicted_q_values = []
+        for i, state in enumerate(current_states):
+            q_values = self.forward(state)
+            action_idx = list(self.action_map.keys())[list(self.action_map.values()).index(actions[i])]
+            predicted_q_values.append(q_values[action_idx])
 
         # Stack the individual tensors into a batch tensor
         predicted_q_tensor = torch.stack(predicted_q_values)
+
+
 
         # Standard DQN: use target network for both action selection and evaluation
         target_q_values = []
