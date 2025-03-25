@@ -815,7 +815,7 @@ class DDQN(nn.Module):
         # Exploration parameters
         self.epsilon = epsilon  # Start with high exploration
         self.epsilon_min = 0.1
-        self.epsilon_decay = 0.995
+        self.epsilon_decay = 0.00002 # change epilson decay to very small value
 
         # Apply proper weight initialization
         self._initialize_weights()

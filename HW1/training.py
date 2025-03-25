@@ -24,10 +24,10 @@ if __name__=="__main__":
     reward_values = []
 
     # initialise 2 agents
-    q_agent = DDQN()
+    q_agent = DDQN(load_path="naive/q_agent_weights.pth")
     q_agent.to(device='cuda')
 
-    target_agent = DDQN()
+    target_agent = DDQN(load_path="naive/q_agent_weights.pth")
     target_agent.to(device='cuda')
 
 
@@ -42,7 +42,7 @@ if __name__=="__main__":
     # set optimizer
     optimizer = optim.Adam(q_agent.parameters(), lr=0.001)
 
-    epoch_num = 1000
+    epoch_num = 10000
 
     for epoch in range(epoch_num):
 
@@ -52,7 +52,7 @@ if __name__=="__main__":
         optimizer.zero_grad()
 
         # get around 300 transitions
-        training_data = get_training_data(q_agent, num_games=50)
+        training_data = get_training_data(q_agent, num_games=30)
 
 
         # Randomly select 64 elements without replacement
@@ -87,9 +87,8 @@ if __name__=="__main__":
             ##### save the weights
             q_agent.save_weights("./naive/q_agent_weights.pth")
             target_agent.save_weights("./naive/target_agent_weights.pth")
-
-    plot_progress_data(loss_values, save_plot=True, plot_file_title="loss_plot.png")
-    plot_progress_data(reward_values, save_plot=True, plot_file_title="reward_plot.png")
+            plot_progress_data(loss_values, save_plot=True, plot_file_title="loss_plot.png")
+            plot_progress_data(reward_values, save_plot=True, plot_file_title="reward_plot.png")
 
 
 
