@@ -1,4 +1,4 @@
-from model import QAgentWithEpilsonAndMoreDepth
+from model import DDQN
 import torch.optim as optim
 
 import random
@@ -24,10 +24,10 @@ if __name__=="__main__":
     reward_values = []
 
     # initialise 2 agents
-    q_agent = QAgentWithEpilsonAndMoreDepth()
+    q_agent = DDQN()
     q_agent.to(device='cuda')
 
-    target_agent = QAgentWithEpilsonAndMoreDepth()
+    target_agent = DDQN()
     target_agent.to(device='cuda')
 
 
@@ -42,7 +42,7 @@ if __name__=="__main__":
     # set optimizer
     optimizer = optim.Adam(q_agent.parameters(), lr=0.001)
 
-    epoch_num = 1000
+    epoch_num = 1
 
     for epoch in range(epoch_num):
 
