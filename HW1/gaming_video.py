@@ -2,55 +2,75 @@
 For recording of video of agent playing the game.
 """
 
-from model import Q_agent
-import torch.optim as optim
-
-import random
-from replayDataBuffer import get_training_data, get_reward_data
-from visual import plot_progress_data
-from data import save_array_to_file, append_values_to_file, load_array_from_file
 import gymnasium as gym
 import numpy as np
 import ale_py
 from model import Q_agent, QAgentWithEpilsonAndMoreDepth
 from collections import deque
-import random
-from tqdm import tqdm
+import time
+import cv2
+import os
 
-# Register Atari Learning Environment environments with Gymnasium
 gym.register_envs(ale_py)
 
-# Create Pong environment without rendering for faster data collection
-env = gym.make("ALE/Pong-v5", render_mode="human", obs_type="rgb")
+# Create Pong environment with rendering for video recording
+env = gym.make("ALE/Pong-v5", render_mode="rgb_array", obs_type="rgb")
 
-if __name__=="__main__":
+def record_gameplay(duration=90):
+    """Record gameplay for specified duration in seconds"""
 
-    # initialise 2 agents
-    q_agent = QAgentWithEpilsonAndMoreDepth("naive/target_agent_weights.pth")
+    # Initialize video writer
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+    video_path = "pong_gameplay.mp4"
+    fps = 30
+    frame_width, frame_height = 160, 210  # Default Atari frame size
+    video_writer = cv2.VideoWriter(video_path, fourcc, fps, (frame_width, frame_height))
+
+    # Initialize agent
+    q_agent = QAgentWithEpilsonAndMoreDepth("results/iter 4 2200 training with DQN/target_agent_weights.pth")
     q_agent.to(device='cuda')
 
-    for i in range(10):
+    # Setup timers
+    start_time = time.time()
+    end_time = start_time + duration
 
-        # Initialize new game
-        done = False
-        obs, info = env.reset()  # BUG FIX: env.reset() returns (obs, info) in newer Gymnasium
+    # Game loop
+    while time.time() < end_time:
+        # Reset environment for new game if needed
+        obs, info = env.reset()
 
-
-        # Make a copy of current state for recording
-        # BUG: This line creates an empty copy since current_state is empty at the start of each game
-        # Should be moved to after filling current_state
-
-        # maintain 4 consecutive frames in the queue for current state
+        # Initialize state queue
         current_state = deque(maxlen=4)
-        current_state.append(obs)
+        for _ in range(4):  # Fill with initial observation to have 4 frames
+            current_state.append(obs)
 
+        done = False
 
-        while not done:
-            env.render()
+        # Episode loop
+        while not done and time.time() < end_time:
+            # Render and record frame
+            frame = env.render()
+            video_writer.write(cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
+
+            # Get action from agent
             input_state = np.array(current_state)
             action, _ = q_agent.get_action(input_state)
 
-            # Take action and observe result
-            obs, reward, _, _, info = env.step(action)  # BUG FIX: Unpack 5 values
-            if reward != 0:
-                done = True
+            # Take action
+            obs, reward, terminated, truncated, info = env.step(action)
+
+            # Update state
+            current_state.append(obs)
+
+            # Check if done
+            done = terminated or truncated
+
+            # Optional: add small delay to control frame rate
+            time.sleep(1/fps)
+
+    # Release resources
+    video_writer.release()
+    print(f"Video saved to {os.path.abspath(video_path)}")
+
+if __name__ == "__main__":
+    record_gameplay(duration=200)  # Record for 90 seconds

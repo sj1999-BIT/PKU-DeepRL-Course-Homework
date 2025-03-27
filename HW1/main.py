@@ -1,4 +1,4 @@
-from model import Q_agent, ImprovedQAgent
+from model import Q_agent
 import torch.optim as optim
 
 import random
@@ -13,8 +13,8 @@ first check what is wrong with the training data.
 if __name__=="__main__":
 
     # initialise 2 agents
-    q_agent = ImprovedQAgent()
-    q_agent.to(device='cuda')
+    # q_agent = ImprovedQAgent()
+    # q_agent.to(device='cuda')
 
 
     # get around 300 transitions
@@ -27,11 +27,11 @@ if __name__=="__main__":
     #
     # plot_frequency(action_arr, action_choice, save_plot=True)
 
-    loss_values = load_array_from_file("loss.json")
-    reward_values = load_array_from_file("reward.json")
+    # loss_values = load_array_from_file("loss.json")
+    reward_values = []
+    reward_values.extend(load_array_from_file("results/iter 1 improved 1K training/loss.json"))
 
-    plot_progress_data(loss_values, save_plot=True, plot_file_title="loss_plot.png")
-    plot_progress_data(reward_values, save_plot=True, plot_file_title="reward_plot.png")
+    plot_progress_data(reward_values, save_plot=True, plot_file_title="results/iter 1 improved 1K training/loss_plot.png")
 
 
 
