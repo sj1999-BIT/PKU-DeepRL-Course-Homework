@@ -142,7 +142,9 @@ if __name__ == "__main__":
     obs_dim = env.observation_space.shape[0]
     action_dim = env.action_space.shape[0]
     pNet = PolicyNetwork(obs_dim, action_dim)
+    pNet.load_weights("./Policy_nn_weight.pth")
     vNet = ValueNetwork(obs_dim)
+    pNet.load_weights("./Value_nn_weight.pth")
 
     # Pre-create batch of environments
     batch_size = 10  # Process 10 environments at a time
