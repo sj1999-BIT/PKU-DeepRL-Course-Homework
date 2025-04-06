@@ -1,5 +1,7 @@
 import math
-import os.path
+import os
+
+import torch.optim as optim
 
 import torch
 import torch.nn as nn
@@ -28,7 +30,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 class ValueNetwork(nn.Module):
-    def __init__(self, state_dim):
+    def __init__(self, state_dim, lr=3e-4):
         super(ValueNetwork, self).__init__()
 
         self.value = nn.Sequential(
@@ -39,21 +41,71 @@ class ValueNetwork(nn.Module):
             nn.Linear(256, 1)
         )
 
-        self.value.to(device)
+        self.value = self.value.to(device)
+
+        self.optimizer = optim.Adam(self.parameters(), lr=lr)
 
 
 
     def forward(self, state):
-        state.to(device)
+        state = state.to(device)
         # Only takes state as input, not action
-        return self.value(state)
+        return self.value(state).cpu()
 
+    def get_loss(self, trajectory_tensor):
+        """
+        generate MSE for value network
+        :param trajectory_tensor: contains batch data sampled from the generated data
+        :param epilson: small value for clipping
+        :return:
+        """
+
+        cur_state_tensor = trajectory_tensor['states'].detach().clone()
+        reward_to_go_tensor = trajectory_tensor['returns'].detach().clone()
+
+        value_tensor = self.forward(cur_state_tensor)
+
+        # Calculate mean squared error between predicted values and actual returns
+        value_loss = torch.mean((value_tensor - reward_to_go_tensor) ** 2)
+
+        return value_loss
+
+    def save_weights(self, filepath="./Policy_nn_weight", timestep=None):
+        """
+        Save the model weights to a file
+        :param filepath: path to save the model weights
+        """
+
+        if timestep is not None:
+            filepath = f"{filepath}_{timestep}.pth"
+        else:
+            filepath = f"{filepath}.pth"
+
+        torch.save({
+            'model_state_dict': self.state_dict(),
+            'optimizer_state_dict': self.optimizer.state_dict(),
+        }, filepath)
+        print(f"Model weights saved to {filepath}")
+
+    def load_weights(self, filepath):
+        """
+        Load the model weights from a file
+        :param filepath: path to load the model weights from
+        """
+        if not os.path.exists(filepath):
+            print(f"No weights file found at {filepath}")
+            return False
+
+        checkpoint = torch.load(filepath)
+        self.load_state_dict(checkpoint['model_state_dict'])
+        self.optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+        print(f"Model weights loaded from {filepath}")
+        return True
 
 
 class PolicyNetwork(nn.Module):
 
-
-    def __init__(self, state_dim, action_dim, action_std=0.5):
+    def __init__(self, state_dim, action_dim, action_std=0.5, lr=3e-4):
         """
         Initialize the policy network for continuous action spaces.
 
@@ -84,6 +136,10 @@ class PolicyNetwork(nn.Module):
         # Action range for clipping (typical for continuous control tasks)
         self.action_range = 1.0
 
+        # Initialize optimizers
+        self.optimizer = optim.Adam(self.parameters(), lr=lr)
+
+
 
     def forward(self, state):
         """
@@ -105,6 +161,35 @@ class PolicyNetwork(nn.Module):
         mean = torch.tanh(self.actor(state))
         std = self.log_std.exp()
         return mean, std
+
+    def get_action_probability(self, state, action):
+        """
+        Calculate the probability density of taking a specific action given the state.
+
+        Args:
+            state: Environment state tensor
+            action: The action tensor for which to compute probability
+
+        Returns:
+            prob: The probability density of the action
+        """
+        # Get mean and std from forward pass
+        mean, std = self.forward(state)
+
+        # Create a Normal distribution
+        dist = torch.distributions.Normal(mean, std)
+
+        # Get log probability density
+        log_prob = dist.log_prob(action)
+
+        # Sum across only the last dimension to get joint probabilities
+        if len(log_prob.shape) > 1:
+            log_prob = log_prob.sum(dim=-1)  # Use -1 to always refer to the last dimension
+
+        # Convert from log probability to probability
+        prob = torch.exp(log_prob)
+
+        return prob
 
 
     def get_action(self, state, deterministic=False):
@@ -134,33 +219,110 @@ class PolicyNetwork(nn.Module):
 
         # Clip actions to ensure they stay within [-1, 1] range
         action = torch.clamp(action, -self.action_range, self.action_range)
-        return action
 
+        # Create a Normal distribution
+        normal = torch.distributions.Normal(mean, std)
 
-    def evaluate(self, state, action):
+        # Get log probability density
+        log_prob = normal.log_prob(action)
+
+        # Sum across only the last dimension to get joint probabilities
+        if len(log_prob.shape) > 1:
+            log_prob = log_prob.sum(dim=-1)  # Use -1 to always refer to the last dimension
+
+        # Convert from log probability to probability
+        prob = torch.exp(log_prob)
+
+        return action, prob
+
+    def get_loss(self, trajectory_tensor, epilson=0.2):
         """
-        Evaluate the log probability and entropy of actions.
-
-        Args:
-            state: Environment state tensor
-            action: Action tensor to evaluate
-
-        Returns:
-            log_prob: Log probability of the action under current policy (for each batch element)
-            entropy: Entropy of the policy distribution (for each batch element)
-
-        Used during training to compute policy loss and entropy bonus.
-        Higher log probability means the action is more likely under current policy.
-        Higher entropy encourages exploration by making the policy distribution more uniform.
+        :param trajectory_tensor: contains batch data sampled from the generated data
+        :param epilson: small value for clipping
+        :return:
         """
-        mean, std = self.forward(state)
-        # Create a Normal distribution with the predicted mean and std
-        dist = torch.distributions.Normal(mean, std)
-        # Calculate log probability of the action
-        log_prob = dist.log_prob(action).sum(dim=-1, keepdim=True)
-        # Calculate entropy of the distribution
-        entropy = dist.entropy().sum(dim=-1, keepdim=True)
-        return log_prob, entropy
+
+        cur_state_tensor = trajectory_tensor['states'].detach().clone()
+        action_tensor = trajectory_tensor['actions'].detach().clone()
+        old_probs_tensor = trajectory_tensor['old_probs'].detach().clone()
+        advantage_tensor = trajectory_tensor['advantages'].detach().clone()
+
+
+        # find the new probability of outputing current action given state
+        new_prob_tensor = self.get_action_probability(cur_state_tensor, action_tensor)
+        prob_ratio = old_probs_tensor / new_prob_tensor
+
+        clipped_prob_ratio = torch.clamp(prob_ratio, min=1-epilson, max=1+epilson)
+
+        # Calculate the surrogate objectives
+        surrogate1 = prob_ratio * advantage_tensor
+        surrogate2 = clipped_prob_ratio * advantage_tensor
+
+        # Take the minimum of the two surrogate objectives
+        # Use negative because we want to maximize the objective, but optimizers minimize
+        policy_loss_tensor = -torch.min(surrogate1, surrogate2)
+
+        # Average over all timesteps and trajectories
+        policy_loss = policy_loss_tensor.mean()
+
+        return policy_loss
+
+    def save_weights(self, filepath="./Value_nn_weight", timestep=None):
+        """
+        Save the model weights to a file
+        :param filepath: path to save the model weights
+        """
+
+        if timestep is not None:
+            filepath = f"{filepath}_{timestep}.pth"
+        else:
+            filepath = f"{filepath}.pth"
+
+        torch.save({
+            'model_state_dict': self.state_dict(),
+            'optimizer_state_dict': self.optimizer.state_dict(),
+        }, filepath)
+        print(f"Model weights saved to {filepath}")
+
+    def load_weights(self, filepath):
+        """
+        Load the model weights from a file
+        :param filepath: path to load the model weights from
+        """
+        if not os.path.exists(filepath):
+            print(f"No weights file found at {filepath}")
+            return False
+
+        checkpoint = torch.load(filepath)
+        self.load_state_dict(checkpoint['model_state_dict'])
+        self.optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+        print(f"Model weights loaded from {filepath}")
+        return True
+
+    # def evaluate(self, state, action):
+    #     """
+    #     Evaluate the log probability and entropy of actions.
+    #
+    #     Args:
+    #         state: Environment state tensor
+    #         action: Action tensor to evaluate
+    #
+    #     Returns:
+    #         log_prob: Log probability of the action under current policy (for each batch element)
+    #         entropy: Entropy of the policy distribution (for each batch element)
+    #
+    #     Used during training to compute policy loss and entropy bonus.
+    #     Higher log probability means the action is more likely under current policy.
+    #     Higher entropy encourages exploration by making the policy distribution more uniform.
+    #     """
+    #     mean, std = self.forward(state)
+    #     # Create a Normal distribution with the predicted mean and std
+    #     dist = torch.distributions.Normal(mean, std)
+    #     # Calculate log probability of the action
+    #     log_prob = dist.log_prob(action).sum(dim=-1, keepdim=True)
+    #     # Calculate entropy of the distribution
+    #     entropy = dist.entropy().sum(dim=-1, keepdim=True)
+    #     return log_prob, entropy
 
 
 
