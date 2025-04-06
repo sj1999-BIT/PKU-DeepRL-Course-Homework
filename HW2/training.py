@@ -158,13 +158,10 @@ if __name__ == "__main__":
 
         if time_step % 100 == 0:
             # every 100 timestep we save the weights
-            pNet.save_weights(timestep=time_step)
-            vNet.save_weights(timestep=time_step)
+            pNet.save_weights()
+            vNet.save_weights()
             append_values_to_file(reward_arr, "./reward_plot.txt")
             reward_arr = []
-
-
-
 
         single_epoch_update(pNet, vNet, buffer, envs, batch_size=64)
 

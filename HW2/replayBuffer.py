@@ -283,7 +283,7 @@ if __name__ == "__main__":
     import time
 
     # Pre-create batch of environments
-    batch_size = 10  # Process 10 environments at a time
+    batch_size = 20  # Process 10 environments at a time
     envs = [gym.make(env.unwrapped.spec.id) for _ in range(batch_size)]
 
     # initialise buffer
