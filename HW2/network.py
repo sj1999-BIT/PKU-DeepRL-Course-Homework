@@ -70,7 +70,7 @@ class ValueNetwork(nn.Module):
 
         return value_loss
 
-    def save_weights(self, filepath="./Policy_nn_weight", timestep=None):
+    def save_weights(self, filepath="./Value_nn_weight", timestep=None):
         """
         Save the model weights to a file
         :param filepath: path to save the model weights
@@ -267,7 +267,7 @@ class PolicyNetwork(nn.Module):
 
         return policy_loss
 
-    def save_weights(self, filepath="./Value_nn_weight", timestep=None):
+    def save_weights(self, filepath="./Policy_nn_weight", timestep=None):
         """
         Save the model weights to a file
         :param filepath: path to save the model weights
