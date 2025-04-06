@@ -99,7 +99,7 @@ class ReplayBuffer:
 
         return advantages, returns
 
-    def generate_data(self, envs: [gym.Env], policyNet: PolicyNetwork, valueNet: ValueNetwork, batch_size=10):
+    def generate_data(self, envs: [gym.Env], policyNet: PolicyNetwork, valueNet: ValueNetwork, batch_size=20):
         """
         Generates training data by collecting 100 trajectories using the provided policy network,
         storing all data in tensor form for faster processing.
@@ -116,7 +116,7 @@ class ReplayBuffer:
         all_trajectory_tensors = []
 
         # Create tqdm progress bar for the iteration
-        for batch_start in tqdm(range(0, 100, batch_size), desc="Collecting replay experience"):
+        for batch_start in tqdm(range(batch_size), desc="Collecting replay experience"):
             # Initialize tensor lists for current batch
             batch_states = []
             batch_actions = []
