@@ -8,6 +8,10 @@ import torch
 
 from network import ValueNetwork, PolicyNetwork
 
+"""
+
+"""
+
 
 # Set device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -99,10 +103,14 @@ class ReplayBuffer:
 
         return advantages, returns
 
-    def generate_data(self, envs: [gym.Env], policyNet: PolicyNetwork, valueNet: ValueNetwork, batch_size=20):
+    def generate_data(self, envs: [gym.Env], policyNet: PolicyNetwork, valueNet: ValueNetwork, batch_size=5):
         """
         Generates training data by collecting 100 trajectories using the provided policy network,
         storing all data in tensor form for faster processing.
+
+        After 5K epoch, I realised that the model can run ok for the first 100 timesteps, but fails after that.
+        I speculate longer trajectories could improve the model.
+        From 20 trajectories, 100 time steps to 5 trajectories, 500 time steps.
 
         :param env: The gym environment to collect trajectories from
         :param policyNet: The policy network used to select actions
@@ -134,7 +142,7 @@ class ReplayBuffer:
                 current_states.append(state)
 
             # Process steps for fixed episode length
-            for step in range(100):  # Fixed step limit
+            for step in range(500):  # Fixed step limit
                 # Convert current states to tensor
                 states_tensor = torch.FloatTensor(np.array(current_states)).to(device)
 
