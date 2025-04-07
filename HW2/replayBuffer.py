@@ -124,117 +124,111 @@ class ReplayBuffer:
         all_trajectory_tensors = []
 
         # Create tqdm progress bar for the iteration
-        for batch_start in tqdm(range(batch_size), desc="Collecting replay experience"):
-            # Initialize tensor lists for current batch
-            batch_states = []
-            batch_actions = []
-            batch_rewards = []
-            batch_old_log_probs = []
-            batch_next_states = []
-            batch_dones = []
+       #  for batch_start in tqdm(range(batch_size), desc="Collecting replay experience"):
+        # Initialize tensor lists for current batch
+        batch_states = []
+        batch_actions = []
+        batch_rewards = []
+        batch_old_log_probs = []
+        batch_next_states = []
+        batch_dones = []
 
-            # Initialize environment states
-            current_states = []
-            is_done = torch.zeros(batch_size, dtype=torch.bool, device=device)
+        # Initialize environment states
+        current_states = []
+        is_done = torch.zeros(len(envs), dtype=torch.bool, device=device)
 
-            for i, e in enumerate(envs):
-                state, _ = e.reset()
-                current_states.append(state)
+        for i, e in enumerate(envs):
+            state, _ = e.reset()
+            current_states.append(state)
 
-            # Process steps for fixed episode length
-            for step in range(500):  # Fixed step limit
-                # Convert current states to tensor
-                states_tensor = torch.FloatTensor(np.array(current_states)).to(device)
+        # Process steps for fixed episode length
+        for step in tqdm(range(1000), desc="Collecting replay experience"):  # Fixed step limit
+            # Convert current states to tensor
+            states_tensor = torch.FloatTensor(np.array(current_states)).to(device)
 
-                # Get actions using policy network (stay in tensor form)
-                actions_tensor, log_probs_tensor = policyNet.get_action(states_tensor)
+            # Get actions using policy network (stay in tensor form)
+            actions_tensor, log_probs_tensor = policyNet.get_action(states_tensor)
 
-                # Store current states
-                batch_states.append(states_tensor)
-                batch_actions.append(actions_tensor)
-                batch_old_log_probs.append(log_probs_tensor)
+            # Store current states
+            batch_states.append(states_tensor)
+            batch_actions.append(actions_tensor)
+            batch_old_log_probs.append(log_probs_tensor)
 
-                # Process environment steps
-                new_states = []
-                rewards = []
-                dones = []
+            # Process environment steps
+            new_states = []
+            rewards = []
+            dones = []
 
-                # Step through environments (still need numpy for gym)
-                for i, (e, state, action, done) in enumerate(zip(envs, current_states,
-                                                                 actions_tensor.cpu().numpy(),
-                                                                 is_done)):
-                    if done:
-                        # If environment is already done, reuse last state
-                        new_states.append(state)
-                        rewards.append(0)
-                        dones.append(True)
-                        continue
+            # Step through environments (still need numpy for gym)
+            for i, (e, state, action, done) in enumerate(zip(envs, current_states,
+                                                             actions_tensor.cpu().numpy(),
+                                                             is_done)):
+                if done:
+                    # If environment is already done, reuse last state
+                    new_states.append(state)
+                    rewards.append(0)
+                    dones.append(True)
+                    continue
 
-                    # Step environment
-                    next_state, reward, terminated, truncated, _ = e.step(action)
-                    done = terminated or truncated
+                # Step environment
+                next_state, reward, terminated, truncated, _ = e.step(action)
+                done = terminated or truncated
 
-                    # Store results
-                    new_states.append(next_state)
-                    rewards.append(reward)
-                    dones.append(done)
+                # Store results
+                new_states.append(next_state)
+                rewards.append(reward)
+                dones.append(done)
 
-                # Convert new data to tensors
-                rewards_tensor = torch.FloatTensor(rewards).to(device)
-                next_states_tensor = torch.FloatTensor(np.array(new_states)).to(device)
-                dones_tensor = torch.BoolTensor(dones).to(device)
+            # Convert new data to tensors
+            rewards_tensor = torch.FloatTensor(rewards).to(device)
+            next_states_tensor = torch.FloatTensor(np.array(new_states)).to(device)
+            dones_tensor = torch.BoolTensor(dones).to(device)
 
-                # Store step results
-                batch_rewards.append(rewards_tensor)
-                batch_next_states.append(next_states_tensor)
-                batch_dones.append(dones_tensor)
+            # Store step results
+            batch_rewards.append(rewards_tensor)
+            batch_next_states.append(next_states_tensor)
+            batch_dones.append(dones_tensor)
 
-                # Update for next iteration
-                current_states = new_states
-                is_done = dones_tensor
+            # Update for next iteration
+            current_states = new_states
+            is_done = dones_tensor
 
-                # Break if all environments are done
-                if is_done.all():
-                    break
+            # Break if all environments are done
+            if is_done.all():
+                break
 
-            # Stack tensors along time dimension (making each tensor shape [time_steps, batch_size, ...])
-            trajectory_tensors = {
-                'states': torch.stack(batch_states),
-                'actions': torch.stack(batch_actions),
-                'rewards': torch.stack(batch_rewards),
-                'old_log_probs': torch.stack(batch_old_log_probs),
-                'next_states': torch.stack(batch_next_states),
-                'dones': torch.stack(batch_dones)
-            }
+        # Stack tensors along time dimension (making each tensor shape [time_steps, batch_size, ...])
+        trajectory_tensors = {
+            'states': torch.stack(batch_states),
+            'actions': torch.stack(batch_actions),
+            'rewards': torch.stack(batch_rewards),
+            'old_log_probs': torch.stack(batch_old_log_probs),
+            'next_states': torch.stack(batch_next_states),
+            'dones': torch.stack(batch_dones)
+        }
 
-            # Calculate advantages and returns as tensors
-            advantages, returns = self.calculate_gae_tensors(
-                trajectory_tensors['states'],
-                trajectory_tensors['rewards'],
-                trajectory_tensors['next_states'],
-                trajectory_tensors['dones'],
-                valueNet
-            )
+        # Calculate advantages and returns as tensors
+        advantages, returns = self.calculate_gae_tensors(
+            trajectory_tensors['states'],
+            trajectory_tensors['rewards'],
+            trajectory_tensors['next_states'],
+            trajectory_tensors['dones'],
+            valueNet
+        )
 
-            # Add to trajectory tensors
-            trajectory_tensors['advantages'] = advantages
-            trajectory_tensors['returns'] = returns
-
-            # Add to overall collection
-            all_trajectory_tensors= trajectory_tensors
-        # No need to clip trajectories as all tensors have same time dimension per batch
-        # Store in buffer
-        # self.tensor_buffer = all_trajectory_tensors
-
-        # reorganise for
-        for key in all_trajectory_tensors.keys():
-            if all_trajectory_tensors[key].dim() == 3:
-                all_trajectory_tensors[key] = all_trajectory_tensors[key].permute(1, 0, 2)
-            if all_trajectory_tensors[key].dim() == 2:
-                all_trajectory_tensors[key] = all_trajectory_tensors[key].permute(1, 0)
+        # Add to trajectory tensors
+        trajectory_tensors['advantages'] = advantages
+        trajectory_tensors['returns'] = returns
 
 
-        return all_trajectory_tensors
+        for key in trajectory_tensors.keys():
+            if trajectory_tensors[key].dim() == 3:
+                trajectory_tensors[key] = trajectory_tensors[key].permute(1, 0, 2)
+            if trajectory_tensors[key].dim() == 2:
+                trajectory_tensors[key] = trajectory_tensors[key].permute(1, 0)
+
+
+        return trajectory_tensors
 
     def random_sample(self, trajectory_tensors, batch_size=64):
         """
