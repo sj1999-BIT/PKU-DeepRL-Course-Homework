@@ -56,7 +56,7 @@ def plot_progress_data(data, save_plot=False, plot_file_title=None):
 
     plt.figure(figsize=(10, 6))
     plt.plot(data)
-    plt.title('Training Loss over Time')
+    plt.title(f'{plot_file_title} over Time')
     plt.xlabel('Training Steps')
     plt.ylabel('Loss')
     plt.grid(True)
@@ -100,11 +100,14 @@ def plot_frequency(A, B, save_plot=False):
 
 # Example usage:
 if __name__ == "__main__":
-    policy_loss_arr = load_array_from_file("./results and data/2_1900_epoch/policy_loss.txt")
+
+    folder_name = "3_8600_epoch"
+
+    policy_loss_arr = load_array_from_file(f"./results and data/{folder_name}/policy_loss.txt")
     plot_progress_data(policy_loss_arr, save_plot=True, plot_file_title="policy_loss")
 
-    policy_loss_arr = load_array_from_file("./results and data/2_1900_epoch/value_loss.txt")
-    plot_progress_data(policy_loss_arr, save_plot=True, plot_file_title="policy_loss")
+    policy_loss_arr = load_array_from_file(f"./results and data/{folder_name}/value_loss.txt")
+    plot_progress_data(policy_loss_arr, save_plot=True, plot_file_title="value_loss")
 
-    policy_loss_arr = load_array_from_file("./results and data/2_1900_epoch/reward_plot.txt")
-    plot_progress_data(policy_loss_arr, save_plot=True, plot_file_title="policy_loss")
+    policy_loss_arr = load_array_from_file(f"./results and data/{folder_name}/reward_plot.txt")
+    plot_progress_data(policy_loss_arr, save_plot=True, plot_file_title="reward")

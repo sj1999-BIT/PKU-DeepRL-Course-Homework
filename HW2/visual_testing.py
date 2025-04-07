@@ -19,7 +19,7 @@ action_dim = env.action_space.shape[0]
 
 # second 1000 epoch, agent moving with larger action, showing some form of shifting forward.
 # large movement penalise more than the shift in forward, result in a decrease in reward accumulated
-weight_path = "./results and data/2_1900_epoch/Policy_nn_weight.pth"
+weight_path = "./results and data/3_8600_epoch/Policy_nn_weight.pth"
 
 # first 1000 epoch, agent move randomly with small action, not really moving forward, but also small penalise
 # weight_path = "./results and data/1_700 epoch/Policy_nn_weight.pth"

@@ -186,10 +186,7 @@ class PolicyNetwork(nn.Module):
         if len(log_prob.shape) > 1:
             log_prob = log_prob.sum(dim=-1)  # Use -1 to always refer to the last dimension
 
-        # Convert from log probability to probability
-        prob = torch.exp(log_prob)
-
-        return prob
+        return log_prob
 
 
     def get_action(self, state, deterministic=False):
@@ -230,10 +227,7 @@ class PolicyNetwork(nn.Module):
         if len(log_prob.shape) > 1:
             log_prob = log_prob.sum(dim=-1)  # Use -1 to always refer to the last dimension
 
-        # Convert from log probability to probability
-        prob = torch.exp(log_prob)
-
-        return action, prob
+        return action, log_prob
 
     def get_loss(self, trajectory_tensor, epilson=0.2):
         """
@@ -244,13 +238,13 @@ class PolicyNetwork(nn.Module):
 
         cur_state_tensor = trajectory_tensor['states'].detach().clone()
         action_tensor = trajectory_tensor['actions'].detach().clone()
-        old_probs_tensor = trajectory_tensor['old_probs'].detach().clone()
+        old_log_probs_tensor = trajectory_tensor['old_log_probs'].detach().clone()
         advantage_tensor = trajectory_tensor['advantages'].detach().clone()
 
 
         # find the new probability of outputing current action given state
-        new_prob_tensor = self.get_action_probability(cur_state_tensor, action_tensor)
-        prob_ratio = old_probs_tensor / new_prob_tensor
+        new_log_prob_tensor = self.get_action_probability(cur_state_tensor, action_tensor)
+        prob_ratio = torch.exp(new_log_prob_tensor - old_log_probs_tensor)
 
         clipped_prob_ratio = torch.clamp(prob_ratio, min=1-epilson, max=1+epilson)
 
@@ -299,30 +293,6 @@ class PolicyNetwork(nn.Module):
         print(f"Model weights loaded from {filepath}")
         return True
 
-    # def evaluate(self, state, action):
-    #     """
-    #     Evaluate the log probability and entropy of actions.
-    #
-    #     Args:
-    #         state: Environment state tensor
-    #         action: Action tensor to evaluate
-    #
-    #     Returns:
-    #         log_prob: Log probability of the action under current policy (for each batch element)
-    #         entropy: Entropy of the policy distribution (for each batch element)
-    #
-    #     Used during training to compute policy loss and entropy bonus.
-    #     Higher log probability means the action is more likely under current policy.
-    #     Higher entropy encourages exploration by making the policy distribution more uniform.
-    #     """
-    #     mean, std = self.forward(state)
-    #     # Create a Normal distribution with the predicted mean and std
-    #     dist = torch.distributions.Normal(mean, std)
-    #     # Calculate log probability of the action
-    #     log_prob = dist.log_prob(action).sum(dim=-1, keepdim=True)
-    #     # Calculate entropy of the distribution
-    #     entropy = dist.entropy().sum(dim=-1, keepdim=True)
-    #     return log_prob, entropy
 
 
 

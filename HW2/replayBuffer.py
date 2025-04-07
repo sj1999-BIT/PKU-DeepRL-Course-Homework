@@ -121,7 +121,7 @@ class ReplayBuffer:
             batch_states = []
             batch_actions = []
             batch_rewards = []
-            batch_old_probs = []
+            batch_old_log_probs = []
             batch_next_states = []
             batch_dones = []
 
@@ -139,12 +139,12 @@ class ReplayBuffer:
                 states_tensor = torch.FloatTensor(np.array(current_states)).to(device)
 
                 # Get actions using policy network (stay in tensor form)
-                actions_tensor, probs_tensor = policyNet.get_action(states_tensor)
+                actions_tensor, log_probs_tensor = policyNet.get_action(states_tensor)
 
                 # Store current states
                 batch_states.append(states_tensor)
                 batch_actions.append(actions_tensor)
-                batch_old_probs.append(probs_tensor)
+                batch_old_log_probs.append(log_probs_tensor)
 
                 # Process environment steps
                 new_states = []
@@ -194,7 +194,7 @@ class ReplayBuffer:
                 'states': torch.stack(batch_states),
                 'actions': torch.stack(batch_actions),
                 'rewards': torch.stack(batch_rewards),
-                'old_probs': torch.stack(batch_old_probs),
+                'old_log_probs': torch.stack(batch_old_log_probs),
                 'next_states': torch.stack(batch_next_states),
                 'dones': torch.stack(batch_dones)
             }
