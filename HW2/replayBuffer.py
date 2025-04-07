@@ -103,7 +103,7 @@ class ReplayBuffer:
 
         return advantages, returns
 
-    def generate_data(self, envs: [gym.Env], policyNet: PolicyNetwork, valueNet: ValueNetwork, batch_size=5):
+    def generate_data(self, envs: [gym.Env], policyNet: PolicyNetwork, valueNet: ValueNetwork):
         """
         Generates training data by collecting 100 trajectories using the provided policy network,
         storing all data in tensor form for faster processing.

@@ -147,8 +147,8 @@ if __name__ == "__main__":
     vNet.load_weights("./Value_nn_weight.pth")
 
     # Pre-create batch of environments
-    batch_size = 10  # Process 10 environments at a time
-    envs = [gym.make(env.unwrapped.spec.id) for _ in range(batch_size)]
+    env_num = 10  # Process 10 environments at a time
+    envs = [gym.make(env.unwrapped.spec.id) for _ in range(env_num)]
 
     time_step = 0
     reward_arr = []
