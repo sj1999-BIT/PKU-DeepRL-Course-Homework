@@ -6,6 +6,7 @@ import torch.nn.functional as F
 from network import ValueNetwork, PolicyNetwork
 from replayBuffer import ReplayBuffer
 from data import append_values_to_file
+from visual_testing import get_reward
 from visual import plot_progress_data
 
 from tqdm import tqdm
@@ -106,33 +107,41 @@ def single_epoch_update(policy_net: PolicyNetwork, value_net: ValueNetwork, buff
     append_values_to_file(value_loss_arr, "./value_loss.txt")
     # plot_progress_data(value_loss_arr, save_plot=True, plot_file_title="value_loss")
 
-def get_reward(policy_net: PolicyNetwork):
-    """
-    Test the policy_net ability to play, get the overall reward
-    :param policy_net:
-    :return:
-    """
 
-    env = gym.make("HalfCheetah-v5", render_mode=None)
-    total_reward = 0
-    done = False
-
-    state, _ = env.reset()
-    while not done:
-        with torch.no_grad():
-            # Convert current states to tensor
-            states_tensor = torch.FloatTensor(np.array(state))
-
-            # Get actions using policy network (stay in tensor form)
-            actions_tensor, probs_tensor = policy_net.get_action(states_tensor)
-
-            # Step environment
-            next_state, reward, terminated, truncated, _ = env.step(actions_tensor.numpy())
-            done = terminated or truncated
-
-            total_reward += reward
-
-    return total_reward
+# def get_reward(policy_net: PolicyNetwork=None):
+#     """
+#     Test the policy_net ability to play, get the overall reward
+#     :param policy_net:
+#     :return:
+#     """
+#
+#     env = gym.make("HalfCheetah-v5", render_mode="human")
+#     total_reward = 0
+#     done = False
+#     state, _ = env.reset()
+#
+#     if policy_net is None:
+#         obs_dim = env.observation_space.shape[0]
+#         action_dim = env.action_space.shape[0]
+#         policy_net = PolicyNetwork(obs_dim, action_dim)
+#         policy_net.load_weights("./Policy_nn_weight.pth")
+#
+#
+#     while not done:
+#         with torch.no_grad():
+#             # Convert current states to tensor
+#             states_tensor = torch.FloatTensor(np.array(state))
+#
+#             # Get actions using policy network (stay in tensor form)
+#             actions_tensor, probs_tensor = policy_net.get_action(states_tensor)
+#
+#             # Step environment
+#             next_state, reward, terminated, truncated, _ = env.step(actions_tensor.numpy())
+#             done = terminated or truncated
+#
+#             total_reward += reward
+#
+#     return total_reward
 
 
 
@@ -167,7 +176,7 @@ if __name__ == "__main__":
 
         single_epoch_update(pNet, vNet, buffer, envs, batch_size=64)
 
-        reward = get_reward(pNet)
+        reward = get_reward()
 
         reward_arr.append(reward)
 
