@@ -35,6 +35,15 @@ def get_reward():
     env = gym.make("HalfCheetah-v5", render_mode=None)
     total_reward = 0
     state, _ = env.reset()
+    # second 1000 epoch, agent moving with larger action, showing some form of shifting forward.
+    weight_path = "./Policy_nn_weight.pth"
+
+    # first 1000 epoch, agent move randomly with small action
+    # weight_path = "./results and data/1_700 epoch/Policy_nn_weight.pth"
+
+    pNet = PolicyNetwork(obs_dim, action_dim)
+
+    pNet.load_weights(weight_path)
     for _ in range(1000):
 
         with torch.no_grad():

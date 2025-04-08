@@ -101,13 +101,13 @@ def plot_frequency(A, B, save_plot=False):
 # Example usage:
 if __name__ == "__main__":
 
-    folder_name = "6_15000_epoch"
+    folder_name = "./results and data/3_correct_training/2_9000_epoch"
 
-    policy_loss_arr = load_array_from_file(f"./results and data/{folder_name}/policy_loss.txt")
+    policy_loss_arr = load_array_from_file(f"{folder_name}/policy_loss.txt")
     plot_progress_data(policy_loss_arr, save_plot=True, plot_file_title="policy_loss")
 
-    policy_loss_arr = load_array_from_file(f"./results and data/{folder_name}/value_loss.txt")
+    policy_loss_arr = load_array_from_file(f"{folder_name}/value_loss.txt")
     plot_progress_data(policy_loss_arr, save_plot=True, plot_file_title="value_loss")
 
-    policy_loss_arr = load_array_from_file(f"./results and data/{folder_name}/reward_plot.txt")
+    policy_loss_arr = load_array_from_file(f"{folder_name}/reward_plot.txt")
     plot_progress_data(policy_loss_arr, save_plot=True, plot_file_title="reward")
