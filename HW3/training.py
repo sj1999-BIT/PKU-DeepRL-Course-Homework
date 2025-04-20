@@ -87,7 +87,7 @@ if __name__ == "__main__":
 
         # collect close loop data using MPC
         policy_training_data = dataProcessor.generate_policy_training_data(policyNet, valueNet, ensemble_dynamic,
-                                                                           trajectory_num=1000, trajectory_len=10,
+                                                                           trajectory_num=1000, trajectory_len=30,
                                                                            discount_factor=0.9, time_step_num=1000)
 
         # train all the models

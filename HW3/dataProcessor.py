@@ -116,13 +116,16 @@ class DataProcessor:
         Check if the predicted next state would cause termination
         """
         batch_size = next_state_tensor.shape[0]
-        terminated = torch.zeros(batch_size, dtype=torch.bool, device=next_state_tensor.device)
+        terminated = torch.zeros(batch_size, dtype=torch.bool)
 
         # Condition 1: Check other state elements are in healthy range
         elements_to_check = next_state_tensor[:, 1:]  # All elements except first
 
-        terminated |= (elements_to_check < self.healthy_state_range[0]).any(dim=1)
-        terminated |= (elements_to_check > self.healthy_state_range[1]).any(dim=1)
+        if not isinstance(elements_to_check, torch.Tensor):
+            elements_to_check = torch.tensor(elements_to_check, dtype=torch.float32)
+
+        terminated |= (elements_to_check.any(dim=1) < self.healthy_state_range[0])
+        terminated |= (elements_to_check.any(dim=1) > self.healthy_state_range[1])
 
         # Condition 2: Check height (z position)
         z_height = next_state_tensor[:, 0]
@@ -155,11 +158,8 @@ class DataProcessor:
             log_probs: log probabilities of the first actions
             total_rewards: total rewards for all trajectories
         """
-        # Expand current state to batch size
-        batch_size = trajectory_num
 
-
-        state_batch = np.array([cur_state, ]).repeat(batch_size, 0)
+        state_batch = np.array([cur_state, ]).repeat(trajectory_num, 0)
         # Repeat the current state for each trajectory
         states_batch_tensor = torch.tensor(state_batch, dtype=torch.float32)  # Shape: [batch_size, state_dim]
 
@@ -171,13 +171,13 @@ class DataProcessor:
         output_log_probs = log_probs_tensor.clone()
 
         # Initialize total rewards
-        total_rewards = torch.zeros(batch_size)
+        total_rewards = torch.zeros(trajectory_num)
 
         # Create discount factors tensor
         discount_powers = torch.tensor([discount_factor ** i for i in range(trajectory_len)])
 
         # Track which trajectories are still active
-        active_mask = torch.ones(batch_size, dtype=torch.bool)
+        active_mask = torch.ones(trajectory_num, dtype=torch.bool)
 
         # Simulate trajectories
         for step in range(trajectory_len):
@@ -186,10 +186,19 @@ class DataProcessor:
                                                                   actions_tensor)  # Shape: [batch_size, state_dim]
 
             # Check termination based on Hopper environment rules
-            terminated = self.check_termination(next_state_tensor)
+            terminated = self.check_termination(next_state_tensor).bool().squeeze()
 
             # update the terminated trajectories
-            active_mask[active_mask.clone()] &= ~terminated
+            active_mask &= ~terminated
+
+            # Keep track of active trajectories
+            active_count = active_mask.sum().item()
+            # print(f"Active trajectories: {active_count}")
+
+            # Stop if all trajectories are inactive
+            if active_count == 0:
+                # print("All trajectories terminated. Stopping.")
+                break  # or return, depending on your loop structure
 
             # Get values for all next states
             values = vNet.forward(next_state_tensor)  # Shape: [batch_size, 1]
