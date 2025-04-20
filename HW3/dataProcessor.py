@@ -37,6 +37,12 @@ class DataProcessor:
 
         self.maxBufferSize = maxSize
 
+        # new update, we take into consideration possible early termination
+        self.healthy_state_range = [-100, 100]
+        self.healthy_z_range = [0.7, float('inf')]
+        self.healthy_angle_range = [-0.2, 0.2]
+
+
     def update_transition_buffer(self):
         """
         Update all keys in the transition buffer and maintain the maximum length for each key.
@@ -105,6 +111,30 @@ class DataProcessor:
             NEXT_STATES: torch.stack(next_states)
         }
 
+    def check_termination(self, next_state_tensor):
+        """
+        Check if the predicted next state would cause termination
+        """
+        batch_size = next_state_tensor.shape[0]
+        terminated = torch.zeros(batch_size, dtype=torch.bool, device=next_state_tensor.device)
+
+        # Condition 1: Check other state elements are in healthy range
+        elements_to_check = next_state_tensor[:, 1:]  # All elements except first
+
+        terminated |= (elements_to_check < self.healthy_state_range[0]).any(dim=1)
+        terminated |= (elements_to_check > self.healthy_state_range[1]).any(dim=1)
+
+        # Condition 2: Check height (z position)
+        z_height = next_state_tensor[:, 0]
+        terminated |= (z_height < self.healthy_z_range[0])
+
+        # Condition 3: Check angle
+        angle = next_state_tensor[:, 1]
+        terminated |= (angle < self.healthy_angle_range[0])
+        terminated |= (angle > self.healthy_angle_range[1])
+
+        return terminated.float().unsqueeze(-1)
+
     def generate_trajectory_reward_batch(self, cur_state, pNet: PolicyNetwork, vNet: ValueNetwork,
                                          ensemble_dNet: Ensembler,
                                          trajectory_num=1000, trajectory_len=30, discount_factor=0.9):
@@ -146,14 +176,26 @@ class DataProcessor:
         # Create discount factors tensor
         discount_powers = torch.tensor([discount_factor ** i for i in range(trajectory_len)])
 
+        # Track which trajectories are still active
+        active_mask = torch.ones(batch_size, dtype=torch.bool)
+
         # Simulate trajectories
         for step in range(trajectory_len):
             # Get next states for all trajectories
             next_state_tensor = ensemble_dNet.get_best_next_state(states_batch_tensor,
                                                                   actions_tensor)  # Shape: [batch_size, state_dim]
 
+            # Check termination based on Hopper environment rules
+            terminated = self.check_termination(next_state_tensor)
+
+            # update the terminated trajectories
+            active_mask[active_mask.clone()] &= ~terminated
+
             # Get values for all next states
             values = vNet.forward(next_state_tensor)  # Shape: [batch_size, 1]
+
+            # Zero out values for terminated trajectories
+            values = values * active_mask.float().unsqueeze(-1)
 
             # Add discounted values to total rewards
             total_rewards += values.squeeze() * discount_powers[step]
@@ -258,40 +300,6 @@ class DataProcessor:
         self.update_transition_buffer()
 
         return result
-
-    # def random_sample(self, batch_size=64):
-    #     """
-    #     Extract a batch of random samples from the transition buffer using efficient
-    #     PyTorch sampling.
-    #
-    #     Args:
-    #         batch_size: Number of samples to extract
-    #
-    #     Returns:
-    #         Dictionary containing batched tensors of randomly sampled trajectory data
-    #     """
-    #     # Generate random indices
-    #     rand_indices = torch.randint(low=0, high=len(self.transitionBuffer["states"]), size=(batch_size,))
-    #
-    #     def get_sample(original_tensor:torch.Tensor, indices):
-    #         arr = [original_tensor.numpy()[index] for index in indices]
-    #         return arr
-    #
-    #     # Convert lists to tensors
-    #     states_tensor = torch.tensor(get_sample(self.transitionBuffer[STATES], rand_indices), dtype=torch.float32)
-    #     actions_tensor = torch.tensor(get_sample(self.transitionBuffer[ACTIONS], rand_indices), dtype=torch.float32)
-    #     next_states_tensor = torch.tensor(get_sample(self.transitionBuffer[NEXT_STATES], rand_indices), dtype=torch.float32)
-    #     reward_tensor = torch.tensor(get_sample(self.transitionBuffer[REWARD], rand_indices), dtype=torch.float32)
-    #
-    #     result = {
-    #         STATES: states_tensor,
-    #         ACTIONS: actions_tensor,
-    #         REWARD: reward_tensor,
-    #         NEXT_STATES: next_states_tensor
-    #     }
-    #
-    #     # Return dictionary with the required tensors
-    #     return result
 
     def random_sample(self, tensors_dict=None, keys_to_sample=None, batch_size=64):
         """

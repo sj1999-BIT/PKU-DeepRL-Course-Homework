@@ -418,7 +418,7 @@ class PolicyNetwork(nn.Module):
 
         return action, log_prob
 
-    def get_loss(self, training_batch, epilson=0.2, entropy_coef=0.01):
+    def get_loss(self, training_batch, epilson=0.2, entropy_coef=0.05):
 
         cur_state_tensor = training_batch[STATES].detach().clone()
         best_action_tensor = training_batch[ACTIONS].detach().clone()
