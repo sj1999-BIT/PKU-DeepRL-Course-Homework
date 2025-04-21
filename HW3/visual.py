@@ -77,23 +77,24 @@ def simulate_policy(path=".", mode=None):
 # Example usage:
 if __name__ == "__main__":
     path = "data/training/1_training_with_PC_termination"
-    # for model_index in range(10):
-    #     filename = f"model_{model_index}_loss"
-    #     loss_arr = load_array_from_file(f"{path}/{filename}.txt")
-    #     plot_progress_data(loss_arr, save_plot=True, plot_file_title=filename)
-    #
-    # filename = "policy_loss"
-    # loss_arr = load_array_from_file(f"{path}/policy_loss.txt")
-    # plot_progress_data(loss_arr, save_plot=True, plot_file_title=filename)
-    #
-    # filename = "value_loss"
-    # loss_arr = load_array_from_file(f"{path}/value_loss.txt")
-    # plot_progress_data(loss_arr, save_plot=True, plot_file_title=filename)
-    #
-    # filename = "reward"
-    # loss_arr = load_array_from_file(f"{path}/reward.txt")
-    # plot_progress_data(loss_arr, save_plot=True, plot_file_title=filename)
+    path = "."
+    for model_index in range(10):
+        filename = f"model_{model_index}_loss"
+        loss_arr = load_array_from_file(f"{path}/{filename}.txt")
+        plot_progress_data(loss_arr, save_plot=True, plot_file_title=filename)
 
-    simulate_policy(path=os.path.join(path, "weight"), mode="human")
+    filename = "policy_loss"
+    loss_arr = load_array_from_file(f"{path}/policy_loss.txt")
+    plot_progress_data(loss_arr, save_plot=True, plot_file_title=filename)
+
+    filename = "value_loss"
+    loss_arr = load_array_from_file(f"{path}/value_loss.txt")
+    plot_progress_data(loss_arr, save_plot=True, plot_file_title=filename)
+
+    filename = "reward"
+    loss_arr = load_array_from_file(f"{path}/reward.txt")
+    plot_progress_data(loss_arr, save_plot=True, plot_file_title=filename)
+
+    # simulate_policy(path=os.path.join("weight"), mode="human")
 
 
