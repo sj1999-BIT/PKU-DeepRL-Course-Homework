@@ -51,10 +51,12 @@ def simulate_policy(path=".", mode=None):
 
     pNet = PolicyNetwork(env)
     pNet.load_weights(f"{path}/Policy_nn_weight.pth")
+    step = 0
 
     for _ in range(1000):
         with torch.no_grad():
 
+            step += 1
             # Get actions using policy network
             actions_tensor, _ = pNet.get_action(state)
 
@@ -62,6 +64,7 @@ def simulate_policy(path=".", mode=None):
             next_state, reward, terminated, truncated, _ = env.step(actions_tensor.numpy())
             total_reward += reward
             state = next_state
+            print(f"step {step}, reward {reward}")
 
             # Check if episode is done
             if terminated or truncated:
@@ -73,7 +76,7 @@ def simulate_policy(path=".", mode=None):
 
 # Example usage:
 if __name__ == "__main__":
-    path = "data/training/0_first_night_training"
+    path = "data/training/1_training_with_PC_termination"
     # for model_index in range(10):
     #     filename = f"model_{model_index}_loss"
     #     loss_arr = load_array_from_file(f"{path}/{filename}.txt")
@@ -91,6 +94,6 @@ if __name__ == "__main__":
     # loss_arr = load_array_from_file(f"{path}/reward.txt")
     # plot_progress_data(loss_arr, save_plot=True, plot_file_title=filename)
 
-    simulate_policy(path=os.path.join(path, "weights"), mode="human")
+    simulate_policy(path=os.path.join(path, "weight"), mode="human")
 
 
