@@ -451,6 +451,10 @@ if __name__ == "__main__":
             single_PPO_update(policyNet, valueNet, generated_data, dataProcessor, batch_size=batch_size,
                               epoch_num=single_update_epoch_num)
 
+            # get reward to see how well the model currently preforms
+            reward = simulate_policy()
+            append_values_to_file(reward, filename="reward.txt")
+
         result = {
             STATES: torch.stack(cur_states),
             NEXT_STATES: torch.stack(next_states),
