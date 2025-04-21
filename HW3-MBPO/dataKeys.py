@@ -1,0 +1,5 @@
+STATES = 'states'
+NEXT_STATES = 'next_states'
+REWARD = 'rewards'
+ACTIONS = 'actions'
+LOG_PROB = 'log_prob_best_action'
