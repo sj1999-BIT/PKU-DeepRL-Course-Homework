@@ -407,7 +407,7 @@ if __name__ == "__main__":
     epoch_training_num = 100
 
     # should increase overtime, up to 15
-    horizon = 0
+    horizon = 10
     horizon_increment_interval = int(training_num / 15)
 
     for training_step in range(training_num):

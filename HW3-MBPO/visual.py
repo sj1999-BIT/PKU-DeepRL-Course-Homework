@@ -3,6 +3,7 @@ import torch
 import matplotlib.pyplot as plt
 import gymnasium as gym
 import numpy as np
+import os
 
 from data import load_array_from_file
 from neural_network import PolicyNetwork, PredictiveNetwork
@@ -50,7 +51,7 @@ def simulate_policy(path=".", mode=None):
     pNet = PolicyNetwork(env)
     pNet.load_weights(f"{path}/Policy_nn_weight.pth")
 
-    for _ in range(1000):
+    for step in range(1000):
         with torch.no_grad():
 
             # Get actions using policy network
@@ -60,6 +61,8 @@ def simulate_policy(path=".", mode=None):
             next_state, reward, terminated, truncated, _ = env.step(actions_tensor.cpu().numpy())
             total_reward += reward
             state = next_state
+
+            print(f"step {step}, reward {reward}")
 
             # Check if episode is done
             if terminated or truncated:
@@ -71,8 +74,24 @@ def simulate_policy(path=".", mode=None):
 
 # Example usage:
 if __name__ == "__main__":
+    path = "."
     for model_index in range(10):
         filename = f"model_{model_index}_loss"
-        loss_arr = load_array_from_file(f"./{filename}.txt")
+        loss_arr = load_array_from_file(f"{path}/{filename}.txt")
         plot_progress_data(loss_arr, save_plot=True, plot_file_title=filename)
+
+    filename = "policy_loss"
+    loss_arr = load_array_from_file(f"{path}/policy_loss.txt")
+    plot_progress_data(loss_arr, save_plot=True, plot_file_title=filename)
+
+    filename = "value_loss"
+    loss_arr = load_array_from_file(f"{path}/value_loss.txt")
+    plot_progress_data(loss_arr, save_plot=True, plot_file_title=filename)
+
+    filename = "reward"
+    loss_arr = load_array_from_file(f"{path}/reward.txt")
+    plot_progress_data(loss_arr, save_plot=True, plot_file_title=filename)
+
+    simulate_policy(path=os.path.join(path), mode="human")
+
 

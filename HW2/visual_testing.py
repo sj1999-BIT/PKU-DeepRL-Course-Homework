@@ -32,11 +32,11 @@ if hasattr(env.unwrapped, 'viewer') and env.unwrapped.viewer is not None:
 
 
 def get_reward():
-    env = gym.make("HalfCheetah-v5", render_mode=None)
+    env = gym.make("HalfCheetah-v5", render_mode="human")
     total_reward = 0
     state, _ = env.reset()
     # second 1000 epoch, agent moving with larger action, showing some form of shifting forward.
-    weight_path = "./Policy_nn_weight.pth"
+    weight_path = "results and data/4_final_training/Policy_nn_weight.pth"
 
     # first 1000 epoch, agent move randomly with small action
     # weight_path = "./results and data/1_700 epoch/Policy_nn_weight.pth"

@@ -225,17 +225,6 @@ class ValueNetwork(nn.Module):
 
         return value_loss
 
-    # def learn(self, sample, path="."):
-    #     # generate MSE loss based on the predicted next state and actual next state
-    #     loss = self.get_loss(sample)
-    #
-    #     # backpropagation
-    #     self.optimizer.zero_grad()
-    #     loss.backward()
-    #     self.optimizer.step()
-    #     append_values_to_file(loss.detach().item(), f"{path}/value_loss.txt")
-    #     self.save_weights()
-
     def save_weights(self, filepath="./Value_nn_weight", timestep=None):
         """
         Save the model weights to a file
@@ -418,7 +407,7 @@ class PolicyNetwork(nn.Module):
 
         return action, log_prob
 
-    def get_loss(self, training_batch, epilson=0.2, entropy_coef=0.05):
+    def get_loss(self, training_batch, epilson=0.2, entropy_coef=0.5):
 
         cur_state_tensor = training_batch[STATES].detach().clone()
         best_action_tensor = training_batch[ACTIONS].detach().clone()
@@ -444,7 +433,7 @@ class PolicyNetwork(nn.Module):
         cur_action_tensor, _ = self.get_action(cur_state_tensor)
 
         # add mse loss between what action we pick now vs the best action
-        policy_loss += torch.nn.functional.mse_loss(cur_action_tensor, best_action_tensor)
+        policy_loss += 0.5 * torch.nn.functional.smooth_l1_loss(cur_action_tensor, best_action_tensor)
 
         # Average over all timesteps and trajectories
         # addin entropy to promote more exploration

@@ -101,7 +101,7 @@ def plot_frequency(A, B, save_plot=False):
 # Example usage:
 if __name__ == "__main__":
 
-    folder_name = "./results and data/3_correct_training/2_9000_epoch"
+    folder_name = "./results and data/2_correct_training_wrong_reward/6_15000_epoch"
 
     policy_loss_arr = load_array_from_file(f"{folder_name}/policy_loss.txt")
     plot_progress_data(policy_loss_arr, save_plot=True, plot_file_title="policy_loss")

@@ -76,7 +76,6 @@ def simulate_policy(path=".", mode=None):
 
 # Example usage:
 if __name__ == "__main__":
-    path = "data/training/1_training_with_PC_termination"
     path = "."
     for model_index in range(10):
         filename = f"model_{model_index}_loss"
@@ -95,6 +94,6 @@ if __name__ == "__main__":
     loss_arr = load_array_from_file(f"{path}/reward.txt")
     plot_progress_data(loss_arr, save_plot=True, plot_file_title=filename)
 
-    # simulate_policy(path=os.path.join("weight"), mode="human")
+    simulate_policy(path=os.path.join(path), mode="human")
 
 
