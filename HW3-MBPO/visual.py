@@ -57,7 +57,7 @@ def simulate_policy(path=".", mode=None):
             actions_tensor, _ = pNet.get_action(state)
 
             # Step environment
-            next_state, reward, terminated, truncated, _ = env.step(actions_tensor.numpy())
+            next_state, reward, terminated, truncated, _ = env.step(actions_tensor.cpu().numpy())
             total_reward += reward
             state = next_state
 
