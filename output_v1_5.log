@@ -1,0 +1,2207 @@
+nohup: ignoring input
+getting transitions:   0%|          | 0/10000 [00:00<?, ?it/s]getting transitions:   2%|▏         | 204/10000 [00:00<00:04, 2035.36it/s]getting transitions:   4%|▍         | 420/10000 [00:00<00:04, 2106.65it/s]getting transitions:   6%|▋         | 637/10000 [00:00<00:04, 2134.00it/s]getting transitions:   9%|▊         | 851/10000 [00:00<00:04, 2082.25it/s]getting transitions:  11%|█         | 1060/10000 [00:00<00:04, 2061.77it/s]getting transitions:  13%|█▎        | 1267/10000 [00:00<00:04, 2020.98it/s]getting transitions:  15%|█▍        | 1470/10000 [00:00<00:04, 2011.12it/s]getting transitions:  17%|█▋        | 1672/10000 [00:00<00:04, 1989.55it/s]getting transitions:  19%|█▊        | 1872/10000 [00:00<00:04, 1988.44it/s]getting transitions:  21%|██        | 2071/10000 [00:01<00:04, 1979.41it/s]getting transitions:  23%|██▎       | 2270/10000 [00:01<00:03, 1979.76it/s]getting transitions:  25%|██▍       | 2470/10000 [00:01<00:03, 1983.77it/s]getting transitions:  27%|██▋       | 2669/10000 [00:01<00:03, 1973.42it/s]getting transitions:  29%|██▊       | 2867/10000 [00:01<00:03, 1963.80it/s]getting transitions:  31%|███       | 3064/10000 [00:01<00:03, 1950.65it/s]getting transitions:  33%|███▎      | 3260/10000 [00:01<00:03, 1926.84it/s]getting transitions:  35%|███▍      | 3455/10000 [00:01<00:03, 1933.20it/s]getting transitions:  36%|███▋      | 3649/10000 [00:01<00:03, 1915.73it/s]getting transitions:  38%|███▊      | 3844/10000 [00:01<00:03, 1925.04it/s]getting transitions:  40%|████      | 4037/10000 [00:02<00:03, 1915.01it/s]getting transitions:  42%|████▏     | 4232/10000 [00:02<00:02, 1924.28it/s]getting transitions:  44%|████▍     | 4426/10000 [00:02<00:02, 1928.35it/s]getting transitions:  46%|████▌     | 4619/10000 [00:02<00:02, 1892.42it/s]getting transitions:  48%|████▊     | 4817/10000 [00:02<00:02, 1917.52it/s]getting transitions:  50%|█████     | 5016/10000 [00:02<00:02, 1938.54it/s]getting transitions:  52%|█████▏    | 5210/10000 [00:02<00:02, 1878.34it/s]getting transitions:  54%|█████▍    | 5399/10000 [00:02<00:02, 1875.22it/s]getting transitions:  56%|█████▌    | 5587/10000 [00:02<00:02, 1853.26it/s]getting transitions:  58%|█████▊    | 5773/10000 [00:02<00:02, 1844.55it/s]getting transitions:  60%|█████▉    | 5966/10000 [00:03<00:02, 1868.78it/s]getting transitions:  62%|██████▏   | 6154/10000 [00:03<00:02, 1791.71it/s]getting transitions:  63%|██████▎   | 6334/10000 [00:03<00:02, 1784.80it/s]getting transitions:  65%|██████▌   | 6513/10000 [00:03<00:01, 1785.36it/s]getting transitions:  67%|██████▋   | 6694/10000 [00:03<00:01, 1789.84it/s]getting transitions:  69%|██████▉   | 6885/10000 [00:03<00:01, 1824.09it/s]getting transitions:  71%|███████   | 7077/10000 [00:03<00:01, 1851.94it/s]getting transitions:  73%|███████▎  | 7271/10000 [00:03<00:01, 1877.60it/s]getting transitions:  75%|███████▍  | 7459/10000 [00:03<00:01, 1569.91it/s]getting transitions:  76%|███████▋  | 7633/10000 [00:04<00:01, 1613.95it/s]getting transitions:  78%|███████▊  | 7812/10000 [00:04<00:01, 1661.68it/s]getting transitions:  80%|███████▉  | 7984/10000 [00:04<00:01, 1659.43it/s]getting transitions:  82%|████████▏ | 8169/10000 [00:04<00:01, 1712.78it/s]getting transitions:  84%|████████▎ | 8361/10000 [00:04<00:00, 1770.38it/s]getting transitions:  86%|████████▌ | 8559/10000 [00:04<00:00, 1829.86it/s]getting transitions:  88%|████████▊ | 8750/10000 [00:04<00:00, 1851.00it/s]getting transitions:  89%|████████▉ | 8941/10000 [00:04<00:00, 1867.99it/s]getting transitions:  91%|█████████▏| 9129/10000 [00:04<00:00, 1802.42it/s]getting transitions:  93%|█████████▎| 9311/10000 [00:04<00:00, 1780.24it/s]getting transitions:  95%|█████████▌| 9512/10000 [00:05<00:00, 1844.43it/s]getting transitions:  97%|█████████▋| 9711/10000 [00:05<00:00, 1886.91it/s]getting transitions:  99%|█████████▉| 9910/10000 [00:05<00:00, 1915.19it/s]getting transitions: 100%|██████████| 10000/10000 [00:05<00:00, 1878.36it/s]
+training 10 dynamic NN for ensemble bootstrap:   0%|          | 0/100 [00:00<?, ?it/s]/home/vipuser/miniconda3/lib/python3.12/site-packages/torch/autograd/graph.py:825: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at ../aten/src/ATen/cuda/CublasHandlePool.cpp:135.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+training 10 dynamic NN for ensemble bootstrap:   1%|          | 1/100 [00:00<00:41,  2.39it/s]training 10 dynamic NN for ensemble bootstrap:   2%|▏         | 2/100 [00:00<00:25,  3.91it/s]training 10 dynamic NN for ensemble bootstrap:   3%|▎         | 3/100 [00:00<00:19,  5.02it/s]training 10 dynamic NN for ensemble bootstrap:   4%|▍         | 4/100 [00:00<00:16,  5.82it/s]training 10 dynamic NN for ensemble bootstrap:   5%|▌         | 5/100 [00:00<00:14,  6.37it/s]training 10 dynamic NN for ensemble bootstrap:   6%|▌         | 6/100 [00:01<00:13,  6.79it/s]training 10 dynamic NN for ensemble bootstrap:   7%|▋         | 7/100 [00:01<00:12,  7.19it/s]Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pthtraining 10 dynamic NN for ensemble bootstrap:   8%|▊         | 8/100 [00:01<00:12,  7.12it/s]training 10 dynamic NN for ensemble bootstrap:   9%|▉         | 9/100 [00:01<00:12,  7.44it/s]training 10 dynamic NN for ensemble bootstrap:  10%|█         | 10/100 [00:01<00:11,  7.68it/s]training 10 dynamic NN for ensemble bootstrap:  11%|█         | 11/100 [00:01<00:11,  7.89it/s]training 10 dynamic NN for ensemble bootstrap:  12%|█▏        | 12/100 [00:01<00:11,  7.83it/s]training 10 dynamic NN for ensemble bootstrap:  13%|█▎        | 13/100 [00:01<00:10,  7.96it/s]training 10 dynamic NN for ensemble bootstrap:  14%|█▍        | 14/100 [00:02<00:10,  8.08it/s]
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txttraining 10 dynamic NN for ensemble bootstrap:  15%|█▌        | 15/100 [00:02<00:10,  8.14it/s]training 10 dynamic NN for ensemble bootstrap:  16%|█▌        | 16/100 [00:02<00:10,  8.05it/s]training 10 dynamic NN for ensemble bootstrap:  17%|█▋        | 17/100 [00:02<00:10,  8.12it/s]training 10 dynamic NN for ensemble bootstrap:  18%|█▊        | 18/100 [00:02<00:10,  8.16it/s]training 10 dynamic NN for ensemble bootstrap:  19%|█▉        | 19/100 [00:02<00:09,  8.15it/s]training 10 dynamic NN for ensemble bootstrap:  20%|██        | 20/100 [00:02<00:09,  8.12it/s]training 10 dynamic NN for ensemble bootstrap:  21%|██        | 21/100 [00:02<00:09,  8.17it/s]
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+training 10 dynamic NN for ensemble bootstrap:  22%|██▏       | 22/100 [00:03<00:09,  8.17it/s]training 10 dynamic NN for ensemble bootstrap:  23%|██▎       | 23/100 [00:03<00:09,  8.21it/s]training 10 dynamic NN for ensemble bootstrap:  24%|██▍       | 24/100 [00:03<00:09,  8.22it/s]training 10 dynamic NN for ensemble bootstrap:  25%|██▌       | 25/100 [00:03<00:09,  8.26it/s]training 10 dynamic NN for ensemble bootstrap:  26%|██▌       | 26/100 [00:03<00:08,  8.24it/s]training 10 dynamic NN for ensemble bootstrap:  27%|██▋       | 27/100 [00:03<00:08,  8.25it/s]training 10 dynamic NN for ensemble bootstrap:  28%|██▊       | 28/100 [00:03<00:08,  8.30it/s]Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txttraining 10 dynamic NN for ensemble bootstrap:  29%|██▉       | 29/100 [00:03<00:08,  8.34it/s]training 10 dynamic NN for ensemble bootstrap:  30%|███       | 30/100 [00:04<00:08,  8.32it/s]training 10 dynamic NN for ensemble bootstrap:  31%|███       | 31/100 [00:04<00:08,  8.33it/s]training 10 dynamic NN for ensemble bootstrap:  32%|███▏      | 32/100 [00:04<00:08,  8.30it/s]training 10 dynamic NN for ensemble bootstrap:  33%|███▎      | 33/100 [00:04<00:08,  8.32it/s]training 10 dynamic NN for ensemble bootstrap:  34%|███▍      | 34/100 [00:04<00:07,  8.31it/s]training 10 dynamic NN for ensemble bootstrap:  35%|███▌      | 35/100 [00:04<00:07,  8.34it/s]
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+training 10 dynamic NN for ensemble bootstrap:  36%|███▌      | 36/100 [00:04<00:07,  8.31it/s]training 10 dynamic NN for ensemble bootstrap:  37%|███▋      | 37/100 [00:04<00:07,  8.33it/s]training 10 dynamic NN for ensemble bootstrap:  38%|███▊      | 38/100 [00:04<00:07,  8.33it/s]training 10 dynamic NN for ensemble bootstrap:  39%|███▉      | 39/100 [00:05<00:07,  8.35it/s]training 10 dynamic NN for ensemble bootstrap:  40%|████      | 40/100 [00:05<00:07,  8.34it/s]training 10 dynamic NN for ensemble bootstrap:  41%|████      | 41/100 [00:05<00:07,  8.27it/s]training 10 dynamic NN for ensemble bootstrap:  42%|████▏     | 42/100 [00:05<00:07,  8.20it/s]Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txttraining 10 dynamic NN for ensemble bootstrap:  43%|████▎     | 43/100 [00:05<00:06,  8.23it/s]training 10 dynamic NN for ensemble bootstrap:  44%|████▍     | 44/100 [00:05<00:06,  8.24it/s]training 10 dynamic NN for ensemble bootstrap:  45%|████▌     | 45/100 [00:05<00:06,  8.14it/s]training 10 dynamic NN for ensemble bootstrap:  46%|████▌     | 46/100 [00:05<00:06,  8.18it/s]training 10 dynamic NN for ensemble bootstrap:  47%|████▋     | 47/100 [00:06<00:06,  8.22it/s]training 10 dynamic NN for ensemble bootstrap:  48%|████▊     | 48/100 [00:06<00:06,  8.25it/s]training 10 dynamic NN for ensemble bootstrap:  49%|████▉     | 49/100 [00:06<00:06,  8.26it/s]
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+training 10 dynamic NN for ensemble bootstrap:  50%|█████     | 50/100 [00:06<00:06,  8.24it/s]training 10 dynamic NN for ensemble bootstrap:  51%|█████     | 51/100 [00:06<00:05,  8.22it/s]training 10 dynamic NN for ensemble bootstrap:  52%|█████▏    | 52/100 [00:06<00:05,  8.20it/s]training 10 dynamic NN for ensemble bootstrap:  53%|█████▎    | 53/100 [00:06<00:05,  8.19it/s]training 10 dynamic NN for ensemble bootstrap:  54%|█████▍    | 54/100 [00:06<00:05,  8.06it/s]training 10 dynamic NN for ensemble bootstrap:  55%|█████▌    | 55/100 [00:07<00:05,  8.04it/s]training 10 dynamic NN for ensemble bootstrap:  56%|█████▌    | 56/100 [00:07<00:05,  8.03it/s]training 10 dynamic NN for ensemble bootstrap:  57%|█████▋    | 57/100 [00:07<00:05,  7.93it/s]Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pthtraining 10 dynamic NN for ensemble bootstrap:  58%|█████▊    | 58/100 [00:07<00:05,  7.88it/s]training 10 dynamic NN for ensemble bootstrap:  59%|█████▉    | 59/100 [00:07<00:05,  7.51it/s]training 10 dynamic NN for ensemble bootstrap:  60%|██████    | 60/100 [00:07<00:05,  7.56it/s]training 10 dynamic NN for ensemble bootstrap:  61%|██████    | 61/100 [00:07<00:05,  7.53it/s]training 10 dynamic NN for ensemble bootstrap:  62%|██████▏   | 62/100 [00:07<00:04,  7.62it/s]training 10 dynamic NN for ensemble bootstrap:  63%|██████▎   | 63/100 [00:08<00:04,  7.73it/s]training 10 dynamic NN for ensemble bootstrap:  64%|██████▍   | 64/100 [00:08<00:04,  7.79it/s]
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txttraining 10 dynamic NN for ensemble bootstrap:  65%|██████▌   | 65/100 [00:08<00:04,  7.90it/s]training 10 dynamic NN for ensemble bootstrap:  66%|██████▌   | 66/100 [00:08<00:04,  7.93it/s]training 10 dynamic NN for ensemble bootstrap:  67%|██████▋   | 67/100 [00:08<00:04,  7.96it/s]training 10 dynamic NN for ensemble bootstrap:  68%|██████▊   | 68/100 [00:08<00:04,  7.96it/s]training 10 dynamic NN for ensemble bootstrap:  69%|██████▉   | 69/100 [00:08<00:03,  7.94it/s]training 10 dynamic NN for ensemble bootstrap:  70%|███████   | 70/100 [00:08<00:03,  7.73it/s]training 10 dynamic NN for ensemble bootstrap:  71%|███████   | 71/100 [00:09<00:03,  7.80it/s]
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+training 10 dynamic NN for ensemble bootstrap:  72%|███████▏  | 72/100 [00:09<00:03,  7.95it/s]training 10 dynamic NN for ensemble bootstrap:  73%|███████▎  | 73/100 [00:09<00:03,  7.90it/s]training 10 dynamic NN for ensemble bootstrap:  74%|███████▍  | 74/100 [00:09<00:03,  7.97it/s]training 10 dynamic NN for ensemble bootstrap:  75%|███████▌  | 75/100 [00:09<00:03,  8.04it/s]training 10 dynamic NN for ensemble bootstrap:  76%|███████▌  | 76/100 [00:09<00:02,  8.07it/s]training 10 dynamic NN for ensemble bootstrap:  77%|███████▋  | 77/100 [00:09<00:02,  8.13it/s]training 10 dynamic NN for ensemble bootstrap:  78%|███████▊  | 78/100 [00:09<00:02,  7.96it/s]Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txttraining 10 dynamic NN for ensemble bootstrap:  79%|███████▉  | 79/100 [00:10<00:02,  8.01it/s]training 10 dynamic NN for ensemble bootstrap:  80%|████████  | 80/100 [00:10<00:02,  8.13it/s]training 10 dynamic NN for ensemble bootstrap:  81%|████████  | 81/100 [00:10<00:02,  8.23it/s]training 10 dynamic NN for ensemble bootstrap:  82%|████████▏ | 82/100 [00:10<00:02,  8.20it/s]training 10 dynamic NN for ensemble bootstrap:  83%|████████▎ | 83/100 [00:10<00:02,  8.26it/s]training 10 dynamic NN for ensemble bootstrap:  84%|████████▍ | 84/100 [00:10<00:01,  8.32it/s]training 10 dynamic NN for ensemble bootstrap:  85%|████████▌ | 85/100 [00:10<00:01,  8.32it/s]
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+training 10 dynamic NN for ensemble bootstrap:  86%|████████▌ | 86/100 [00:10<00:01,  8.25it/s]training 10 dynamic NN for ensemble bootstrap:  87%|████████▋ | 87/100 [00:11<00:01,  8.29it/s]training 10 dynamic NN for ensemble bootstrap:  88%|████████▊ | 88/100 [00:11<00:01,  8.32it/s]training 10 dynamic NN for ensemble bootstrap:  89%|████████▉ | 89/100 [00:11<00:01,  8.28it/s]training 10 dynamic NN for ensemble bootstrap:  90%|█████████ | 90/100 [00:11<00:01,  8.29it/s]training 10 dynamic NN for ensemble bootstrap:  91%|█████████ | 91/100 [00:11<00:01,  8.25it/s]training 10 dynamic NN for ensemble bootstrap:  92%|█████████▏| 92/100 [00:11<00:01,  5.25it/s]Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txttraining 10 dynamic NN for ensemble bootstrap:  93%|█████████▎| 93/100 [00:12<00:01,  5.77it/s]training 10 dynamic NN for ensemble bootstrap:  94%|█████████▍| 94/100 [00:12<00:00,  6.20it/s]training 10 dynamic NN for ensemble bootstrap:  95%|█████████▌| 95/100 [00:12<00:00,  6.50it/s]training 10 dynamic NN for ensemble bootstrap:  96%|█████████▌| 96/100 [00:12<00:00,  6.76it/s]training 10 dynamic NN for ensemble bootstrap:  97%|█████████▋| 97/100 [00:12<00:00,  6.93it/s]training 10 dynamic NN for ensemble bootstrap:  98%|█████████▊| 98/100 [00:12<00:00,  7.07it/s]training 10 dynamic NN for ensemble bootstrap:  99%|█████████▉| 99/100 [00:12<00:00,  7.19it/s]
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+Successfully appended 1 value(s) to ./value_loss.txt
+Model weights saved to ./Value_nn_weight.pth
+Successfully appended 1 value(s) to ./model_0_loss.txt
+Model weights saved to ./dynamics_nn_weight_0.pth
+Successfully appended 1 value(s) to ./model_1_loss.txt
+Model weights saved to ./dynamics_nn_weight_1.pth
+Successfully appended 1 value(s) to ./model_2_loss.txt
+Model weights saved to ./dynamics_nn_weight_2.pth
+Successfully appended 1 value(s) to ./model_3_loss.txt
+Model weights saved to ./dynamics_nn_weight_3.pth
+Successfully appended 1 value(s) to ./model_4_loss.txt
+Model weights saved to ./dynamics_nn_weight_4.pth
+Successfully appended 1 value(s) to ./model_5_loss.txt
+Model weights saved to ./dynamics_nn_weight_5.pth
+Successfully appended 1 value(s) to ./model_6_loss.txt
+Model weights saved to ./dynamics_nn_weight_6.pth
+Successfully appended 1 value(s) to ./model_7_loss.txt
+Model weights saved to ./dynamics_nn_weight_7.pth
+Successfully appended 1 value(s) to ./model_8_loss.txt
+Model weights saved to ./dynamics_nn_weight_8.pth
+Successfully appended 1 value(s) to ./model_9_loss.txt
+Model weights saved to ./dynamics_nn_weight_9.pth
+training 10 dynamic NN for ensemble bootstrap: 100%|██████████| 100/100 [00:12<00:00,  7.33it/s]training 10 dynamic NN for ensemble bootstrap: 100%|██████████| 100/100 [00:12<00:00,  7.70it/s]
+Model weights saved to ./Policy_nn_weight.pth
+using MPC to generate best transitions:   0%|          | 0/1000 [00:00<?, ?it/s]using MPC to generate best transitions:   0%|          | 1/1000 [00:00<08:18,  2.00it/s]using MPC to generate best transitions:   0%|          | 2/1000 [00:00<07:57,  2.09it/s]using MPC to generate best transitions:   0%|          | 3/1000 [00:01<07:46,  2.14it/s]using MPC to generate best transitions:   0%|          | 4/1000 [00:01<07:41,  2.16it/s]using MPC to generate best transitions:   0%|          | 5/1000 [00:02<07:36,  2.18it/s]using MPC to generate best transitions:   1%|          | 6/1000 [00:02<07:32,  2.20it/s]using MPC to generate best transitions:   1%|          | 7/1000 [00:03<07:29,  2.21it/s]using MPC to generate best transitions:   1%|          | 8/1000 [00:03<07:15,  2.28it/s]using MPC to generate best transitions:   1%|          | 9/1000 [00:04<07:20,  2.25it/s]using MPC to generate best transitions:   1%|          | 10/1000 [00:04<07:23,  2.23it/s]using MPC to generate best transitions:   1%|          | 11/1000 [00:04<07:25,  2.22it/s]using MPC to generate best transitions:   1%|          | 12/1000 [00:05<07:28,  2.20it/s]using MPC to generate best transitions:   1%|▏         | 13/1000 [00:05<07:30,  2.19it/s]using MPC to generate best transitions:   1%|▏         | 14/1000 [00:06<07:28,  2.20it/s]using MPC to generate best transitions:   2%|▏         | 15/1000 [00:06<07:28,  2.20it/s]using MPC to generate best transitions:   2%|▏         | 16/1000 [00:07<07:30,  2.18it/s]using MPC to generate best transitions:   2%|▏         | 17/1000 [00:07<07:28,  2.19it/s]using MPC to generate best transitions:   2%|▏         | 18/1000 [00:08<07:26,  2.20it/s]using MPC to generate best transitions:   2%|▏         | 19/1000 [00:08<07:26,  2.20it/s]using MPC to generate best transitions:   2%|▏         | 20/1000 [00:09<07:27,  2.19it/s]using MPC to generate best transitions:   2%|▏         | 21/1000 [00:09<07:25,  2.20it/s]using MPC to generate best transitions:   2%|▏         | 22/1000 [00:10<07:25,  2.20it/s]using MPC to generate best transitions:   2%|▏         | 23/1000 [00:10<07:22,  2.21it/s]using MPC to generate best transitions:   2%|▏         | 24/1000 [00:10<07:20,  2.21it/s]using MPC to generate best transitions:   2%|▎         | 25/1000 [00:11<07:18,  2.22it/s]using MPC to generate best transitions:   3%|▎         | 26/1000 [00:11<07:18,  2.22it/s]using MPC to generate best transitions:   3%|▎         | 27/1000 [00:12<07:19,  2.21it/s]using MPC to generate best transitions:   3%|▎         | 28/1000 [00:12<07:24,  2.19it/s]using MPC to generate best transitions:   3%|▎         | 29/1000 [00:13<07:24,  2.18it/s]using MPC to generate best transitions:   3%|▎         | 30/1000 [00:13<07:23,  2.19it/s]using MPC to generate best transitions:   3%|▎         | 31/1000 [00:14<07:20,  2.20it/s]using MPC to generate best transitions:   3%|▎         | 32/1000 [00:14<07:26,  2.17it/s]using MPC to generate best transitions:   3%|▎         | 33/1000 [00:15<07:27,  2.16it/s]using MPC to generate best transitions:   3%|▎         | 34/1000 [00:15<07:23,  2.18it/s]using MPC to generate best transitions:   4%|▎         | 35/1000 [00:15<07:21,  2.19it/s]using MPC to generate best transitions:   4%|▎         | 36/1000 [00:16<07:23,  2.17it/s]using MPC to generate best transitions:   4%|▎         | 37/1000 [00:16<07:25,  2.16it/s]using MPC to generate best transitions:   4%|▍         | 38/1000 [00:17<07:22,  2.17it/s]using MPC to generate best transitions:   4%|▍         | 39/1000 [00:17<07:20,  2.18it/s]using MPC to generate best transitions:   4%|▍         | 40/1000 [00:18<07:19,  2.19it/s]using MPC to generate best transitions:   4%|▍         | 41/1000 [00:18<07:16,  2.20it/s]using MPC to generate best transitions:   4%|▍         | 42/1000 [00:18<06:30,  2.45it/s]using MPC to generate best transitions:   4%|▍         | 43/1000 [00:19<06:45,  2.36it/s]using MPC to generate best transitions:   4%|▍         | 44/1000 [00:19<06:54,  2.30it/s]using MPC to generate best transitions:   4%|▍         | 45/1000 [00:20<06:59,  2.28it/s]using MPC to generate best transitions:   5%|▍         | 46/1000 [00:20<07:02,  2.26it/s]using MPC to generate best transitions:   5%|▍         | 47/1000 [00:21<07:03,  2.25it/s]using MPC to generate best transitions:   5%|▍         | 48/1000 [00:21<07:03,  2.25it/s]using MPC to generate best transitions:   5%|▍         | 49/1000 [00:22<07:02,  2.25it/s]using MPC to generate best transitions:   5%|▌         | 50/1000 [00:22<07:10,  2.21it/s]using MPC to generate best transitions:   5%|▌         | 51/1000 [00:23<07:13,  2.19it/s]using MPC to generate best transitions:   5%|▌         | 52/1000 [00:23<07:15,  2.18it/s]using MPC to generate best transitions:   5%|▌         | 53/1000 [00:24<07:17,  2.16it/s]using MPC to generate best transitions:   5%|▌         | 54/1000 [00:24<07:17,  2.16it/s]using MPC to generate best transitions:   6%|▌         | 55/1000 [00:24<07:14,  2.18it/s]using MPC to generate best transitions:   6%|▌         | 56/1000 [00:25<07:12,  2.18it/s]using MPC to generate best transitions:   6%|▌         | 57/1000 [00:25<07:13,  2.18it/s]using MPC to generate best transitions:   6%|▌         | 58/1000 [00:26<07:10,  2.19it/s]using MPC to generate best transitions:   6%|▌         | 59/1000 [00:26<07:11,  2.18it/s]using MPC to generate best transitions:   6%|▌         | 60/1000 [00:27<07:12,  2.17it/s]using MPC to generate best transitions:   6%|▌         | 61/1000 [00:27<07:11,  2.18it/s]using MPC to generate best transitions:   6%|▌         | 62/1000 [00:28<07:09,  2.18it/s]using MPC to generate best transitions:   6%|▋         | 63/1000 [00:28<07:10,  2.18it/s]using MPC to generate best transitions:   6%|▋         | 64/1000 [00:29<07:24,  2.11it/s]using MPC to generate best transitions:   6%|▋         | 65/1000 [00:29<07:29,  2.08it/s]using MPC to generate best transitions:   7%|▋         | 66/1000 [00:30<07:26,  2.09it/s]using MPC to generate best transitions:   7%|▋         | 67/1000 [00:30<07:22,  2.11it/s]using MPC to generate best transitions:   7%|▋         | 68/1000 [00:31<07:19,  2.12it/s]using MPC to generate best transitions:   7%|▋         | 69/1000 [00:31<07:14,  2.14it/s]using MPC to generate best transitions:   7%|▋         | 70/1000 [00:31<07:14,  2.14it/s]using MPC to generate best transitions:   7%|▋         | 71/1000 [00:32<07:08,  2.17it/s]using MPC to generate best transitions:   7%|▋         | 72/1000 [00:32<06:50,  2.26it/s]using MPC to generate best transitions:   7%|▋         | 73/1000 [00:33<06:45,  2.28it/s]using MPC to generate best transitions:   7%|▋         | 74/1000 [00:33<06:49,  2.26it/s]using MPC to generate best transitions:   8%|▊         | 75/1000 [00:34<06:52,  2.24it/s]using MPC to generate best transitions:   8%|▊         | 76/1000 [00:34<06:53,  2.23it/s]using MPC to generate best transitions:   8%|▊         | 77/1000 [00:35<06:56,  2.22it/s]using MPC to generate best transitions:   8%|▊         | 78/1000 [00:35<06:56,  2.21it/s]using MPC to generate best transitions:   8%|▊         | 79/1000 [00:35<06:56,  2.21it/s]using MPC to generate best transitions:   8%|▊         | 80/1000 [00:36<06:54,  2.22it/s]using MPC to generate best transitions:   8%|▊         | 81/1000 [00:36<06:28,  2.37it/s]using MPC to generate best transitions:   8%|▊         | 82/1000 [00:37<06:38,  2.30it/s]using MPC to generate best transitions:   8%|▊         | 83/1000 [00:37<06:41,  2.29it/s]using MPC to generate best transitions:   8%|▊         | 84/1000 [00:38<06:42,  2.27it/s]using MPC to generate best transitions:   8%|▊         | 85/1000 [00:38<06:44,  2.26it/s]using MPC to generate best transitions:   9%|▊         | 86/1000 [00:39<06:47,  2.24it/s]using MPC to generate best transitions:   9%|▊         | 87/1000 [00:39<06:48,  2.23it/s]using MPC to generate best transitions:   9%|▉         | 88/1000 [00:39<06:49,  2.23it/s]using MPC to generate best transitions:   9%|▉         | 89/1000 [00:40<06:50,  2.22it/s]using MPC to generate best transitions:   9%|▉         | 90/1000 [00:40<06:56,  2.18it/s]using MPC to generate best transitions:   9%|▉         | 91/1000 [00:41<07:23,  2.05it/s]using MPC to generate best transitions:   9%|▉         | 92/1000 [00:41<07:37,  1.99it/s]using MPC to generate best transitions:   9%|▉         | 93/1000 [00:42<07:30,  2.02it/s]using MPC to generate best transitions:   9%|▉         | 94/1000 [00:42<07:20,  2.06it/s]using MPC to generate best transitions:  10%|▉         | 95/1000 [00:43<07:17,  2.07it/s]using MPC to generate best transitions:  10%|▉         | 96/1000 [00:43<07:11,  2.10it/s]using MPC to generate best transitions:  10%|▉         | 97/1000 [00:44<07:05,  2.12it/s]using MPC to generate best transitions:  10%|▉         | 98/1000 [00:44<06:59,  2.15it/s]using MPC to generate best transitions:  10%|▉         | 99/1000 [00:45<06:56,  2.17it/s]using MPC to generate best transitions:  10%|█         | 100/1000 [00:45<06:53,  2.18it/s]using MPC to generate best transitions:  10%|█         | 101/1000 [00:46<06:54,  2.17it/s]using MPC to generate best transitions:  10%|█         | 102/1000 [00:46<06:52,  2.18it/s]using MPC to generate best transitions:  10%|█         | 103/1000 [00:47<06:54,  2.17it/s]using MPC to generate best transitions:  10%|█         | 104/1000 [00:47<06:53,  2.17it/s]using MPC to generate best transitions:  10%|█         | 105/1000 [00:47<06:53,  2.17it/s]using MPC to generate best transitions:  11%|█         | 106/1000 [00:48<06:54,  2.16it/s]using MPC to generate best transitions:  11%|█         | 107/1000 [00:48<06:55,  2.15it/s]using MPC to generate best transitions:  11%|█         | 108/1000 [00:49<06:54,  2.15it/s]using MPC to generate best transitions:  11%|█         | 109/1000 [00:49<06:52,  2.16it/s]using MPC to generate best transitions:  11%|█         | 110/1000 [00:50<06:51,  2.16it/s]using MPC to generate best transitions:  11%|█         | 111/1000 [00:50<06:53,  2.15it/s]using MPC to generate best transitions:  11%|█         | 112/1000 [00:51<06:56,  2.13it/s]using MPC to generate best transitions:  11%|█▏        | 113/1000 [00:51<06:57,  2.12it/s]using MPC to generate best transitions:  11%|█▏        | 114/1000 [00:52<07:00,  2.11it/s]using MPC to generate best transitions:  12%|█▏        | 115/1000 [00:52<06:58,  2.11it/s]using MPC to generate best transitions:  12%|█▏        | 116/1000 [00:53<07:10,  2.05it/s]using MPC to generate best transitions:  12%|█▏        | 117/1000 [00:53<07:38,  1.93it/s]using MPC to generate best transitions:  12%|█▏        | 118/1000 [00:54<07:33,  1.94it/s]using MPC to generate best transitions:  12%|█▏        | 119/1000 [00:54<07:21,  1.99it/s]using MPC to generate best transitions:  12%|█▏        | 120/1000 [00:55<07:13,  2.03it/s]using MPC to generate best transitions:  12%|█▏        | 121/1000 [00:55<07:05,  2.07it/s]using MPC to generate best transitions:  12%|█▏        | 122/1000 [00:56<07:02,  2.08it/s]using MPC to generate best transitions:  12%|█▏        | 123/1000 [00:56<06:59,  2.09it/s]using MPC to generate best transitions:  12%|█▏        | 124/1000 [00:57<06:58,  2.09it/s]using MPC to generate best transitions:  12%|█▎        | 125/1000 [00:57<06:57,  2.09it/s]using MPC to generate best transitions:  13%|█▎        | 126/1000 [00:58<06:55,  2.10it/s]using MPC to generate best transitions:  13%|█▎        | 127/1000 [00:58<06:49,  2.13it/s]using MPC to generate best transitions:  13%|█▎        | 128/1000 [00:58<06:45,  2.15it/s]
