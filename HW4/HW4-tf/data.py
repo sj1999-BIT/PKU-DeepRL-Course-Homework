@@ -89,15 +89,27 @@ def append_values_to_file(new_values, filename, create_if_missing=True):
     filename = find_and_prep_file(filename)
 
     try:
-        # Ensure new_values is a list (convert single value if needed)
-        if not isinstance(new_values, (list, np.ndarray)):
-            new_values = [new_values]
 
         # Convert numpy arrays to lists
         if isinstance(new_values, np.ndarray):
             new_values = new_values.tolist()
 
+        # Handle numpy scalar values (like those from tensor.numpy())
+        if isinstance(new_values, (np.float32, np.float64, np.int32, np.int64)):
+            # Convert numpy scalar to Python native type
+            new_values = new_values.item()
 
+
+        # Ensure new_values is a list (convert single value if needed)
+        if not isinstance(new_values, list):
+            new_values = [new_values]
+
+        # Convert numpy arrays to lists
+        if isinstance(new_values, np.ndarray):
+            new_values = new_values.tolist()\
+
+
+        existing_data = []
         # Load existing data or create new file
         if os.path.exists(filename):
             with open(filename, 'r') as f:
@@ -105,9 +117,6 @@ def append_values_to_file(new_values, filename, create_if_missing=True):
                     existing_data = json.load(f)
                 except json.JSONDecodeError:
                     print(f"File {filename} is corrupted")
-                    return False
-        else:
-            existing_data = []
 
         # Append new values and save
         existing_data.extend(new_values)

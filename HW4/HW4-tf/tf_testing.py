@@ -1,70 +1,35 @@
+import os
 import tensorflow as tf
 
+if __name__ == "__main__":
+    # Check TensorFlow version
+    print(f"TensorFlow version: {tf.__version__}")
 
-# Define your models
-class Model1(tf.keras.Model):
-    def __init__(self):
-        super(Model1, self).__init__()
-        # Define layers for model 1
-        self.dense1 = tf.keras.layers.Dense(64, activation='relu')
-        self.dense2 = tf.keras.layers.Dense(32, activation='relu')
+    # Check if GPU is available
+    print(f"GPU available: {tf.config.list_physical_devices('GPU')}")
 
-    def call(self, inputs):
-        x = self.dense1(inputs)
-        return self.dense2(x)
+    # Check CUDA version that TensorFlow was built with
+    print(f"TensorFlow built with CUDA: {tf.sysconfig.get_build_info()['cuda_version']}")
 
+    # Try to force CPU/GPU placement to see where the error occurs
+    with tf.device('/CPU:0'):
+        # Create a simple GRU layer on CPUpip uninstall tensorflow
+        cpu_gru = tf.keras.layers.GRU(10, input_shape=(5, 3))
+        # Test with random data
+        test_input = tf.random.normal((2, 5, 3))
+        print("CPU GRU output shape:", cpu_gru(test_input).shape)
 
-class Model2(tf.keras.Model):
-    def __init__(self):
-        super(Model2, self).__init__()
-        # Define layers for model 2
-        self.dense1 = tf.keras.layers.Dense(16, activation='relu')
-        self.dense2 = tf.keras.layers.Dense(1)  # Output layer
+    # Optional: check cuDNN version
+    try:
+        from tensorflow.python.platform import build_info
 
-    def call(self, inputs):
-        x = self.dense1(inputs)
-        return self.dense2(x)
+        print(f"cuDNN version: {build_info.build_info['cudnn_version']}")
+    except:
+        print("Could not determine cuDNN version from TensorFlow")
 
+    # 3x3x4
+    # batch:3, input:3, output: 4
+    weights = [[[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], ],
+               [[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1], ],
+               [[2, 2, 2, 2], [2, 2, 2, 2], [2, 2, 2, 2], ]]
 
-# Initialize models
-model1 = Model1()
-model2 = Model2()
-
-# Define optimizer - you can use different optimizers for each model if needed
-optimizer = tf.keras.optimizers.Adam(learning_rate=0.001)
-
-
-# Training step function
-@tf.function  # Optional: use tf.function for better performance
-def train_step(inputs, targets):
-    with tf.GradientTape() as tape:
-        # Forward pass through model 1
-        intermediate_outputs = model1(inputs)
-
-        # Forward pass through model 2
-        final_outputs = model2(intermediate_outputs)
-
-        # Calculate loss
-        loss = tf.keras.losses.MSE(targets, final_outputs)
-
-    # Get gradients for both models
-    # The tape automatically tracks the entire computation graph
-    gradients = tape.gradient(loss, model1.trainable_variables + model2.trainable_variables)
-
-    # Split gradients for each model if needed
-    model1_grads = gradients[:len(model1.trainable_variables)]
-    model2_grads = gradients[len(model1.trainable_variables):]
-
-    # Apply gradients to both models
-    optimizer.apply_gradients(zip(gradients, model1.trainable_variables + model2.trainable_variables))
-
-    return loss
-
-epochs=100
-
-# Training loop
-for epoch in range(epochs):
-    # Loop through your dataset
-    for x_batch, y_batch in dataset:
-        loss = train_step(x_batch, y_batch)
-    print(f"Epoch {epoch}, Loss: {loss.numpy()}")

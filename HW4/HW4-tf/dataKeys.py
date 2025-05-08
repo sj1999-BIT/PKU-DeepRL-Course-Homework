@@ -4,6 +4,12 @@ AGENT_TWO = 'agent_2'
 
 STATES = 'states'
 NEXT_STATES = 'next_states'
-REWARD = 'rewards'
+REWARDS = 'rewards'
 ACTIONS = 'actions'
 Q_TOTALS = 'q_totals'
+Q_VALS = 'q_values'
+
+AGENT_WEIGHT_NAME = 'agent_nn_weight'
+MIX_WEIGHT_NAME = 'mix_nn_weight'
+REWARD_FILENAME = 'reward.txt'
+LOSS_FILENAME = 'loss.txt'
