@@ -1,0 +1,7 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: win-64
+@EXPLICIT
+https://conda.anaconda.org/anaconda/win-64/vs2015_runtime-14.40.33807-h98bb1dd_1.tar.bz2
+https://conda.anaconda.org/anaconda/win-64/vc-14.40-h2eaa2aa_1.tar.bz2
+https://conda.anaconda.org/anaconda/win-64/cudatoolkit-11.8.0-hd77b12b_0.tar.bz2
