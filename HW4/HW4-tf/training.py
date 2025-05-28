@@ -11,6 +11,19 @@ from data import append_values_to_file
 from dataProcessor import DataProcessor
 from qmix import QMIX
 
+"""
+Trained epilson from 1 to 0.96
+
+iteration 6: 
+    - increase hidden layer dim from 128 to 256
+    - training epoch drop from 20 to 10
+    - add normalization of the rewards to each full episode
+    - monitor the q_values
+    - increase discount factor to 0.99 like the original paper
+
+ """
+
+
 
 def build_models():
     """
@@ -31,6 +44,61 @@ def build_models():
     mixNet({STATES: dummy_global_state, Q_VALS: dummy_q_vals})
 
     return agent, mixNet
+
+
+def calculate_correlation_tf(agent_q_values, q_total):
+    """
+    Calculate correlation between each agent's Q-values and Q-total using TensorFlow ops
+
+    Args:
+        agent_q_values: EagerTensor of shape (batch_size, num_agents) - e.g., (25, 3)
+        q_total: EagerTensor of shape (batch_size,) or (batch_size, 1) - e.g., (25,)
+
+    Returns:
+        correlations: TensorFlow tensor with correlation coefficients for each agent
+    """
+    # Ensure q_total is the right shape
+    q_total = tf.reshape(q_total, [-1])
+
+    # Get the number of agents
+    num_agents = agent_q_values.shape[1]
+
+    # Calculate correlations for each agent
+    correlations = []
+    for agent_idx in range(num_agents):
+        agent_q = agent_q_values[:, agent_idx]
+
+        # Calculate means
+        mean_agent_q = tf.reduce_mean(agent_q)
+        mean_q_total = tf.reduce_mean(q_total)
+
+        # Calculate covariance
+        numerator = tf.reduce_sum((agent_q - mean_agent_q) * (q_total - mean_q_total))
+
+        # Calculate standard deviations
+        std_agent_q = tf.sqrt(tf.reduce_sum(tf.square(agent_q - mean_agent_q)))
+        std_q_total = tf.sqrt(tf.reduce_sum(tf.square(q_total - mean_q_total)))
+
+        # Calculate correlation
+        denominator = std_agent_q * std_q_total
+        correlation = tf.where(
+            tf.equal(denominator, 0),
+            tf.constant(0.0, dtype=tf.float32),
+            numerator / denominator
+        )
+
+        correlations.append(correlation)
+
+    return tf.stack(correlations)
+
+def calculate_reward(observation_dict):
+    """
+    Self define a reward function that better capture the task.
+    1. reward for being closer to
+    :param observation_dict:
+    :return:
+    """
+
 
 
 def generate_mix_NN_inputs_for_full_episode(episode_dict, agent: AgentNetwork, mixNet: MixNetwork):
@@ -96,7 +164,7 @@ def generate_mix_NN_inputs_for_full_episode(episode_dict, agent: AgentNetwork, m
     return mixNet_inputs_dict
 
 
-def get_TD_error(episode_dict, agent: AgentNetwork, mixNet: MixNetwork, discount_factor=0.9):
+def get_TD_error(episode_dict, agent: AgentNetwork, mixNet: MixNetwork, file_path, discount_factor=0.99):
     """
     An array of sampled_episode_arr is provided, get the Q_total for each time_step.
     Generate the TD_error for each time_step
@@ -110,18 +178,23 @@ def get_TD_error(episode_dict, agent: AgentNetwork, mixNet: MixNetwork, discount
     # must stay in tf form
     q_total = tf.squeeze(mixNet.call(mixNet_inputs), -1)
 
+    # save the correlation
+    correlation_tensor = calculate_correlation_tf(mixNet_inputs[Q_VALS], q_total)
+
     # TD is the MSE of reward + next_state_q_total * discount - cur_state_q_total
     cur_state_q_total = q_total[:-1]
     next_state_q_total = q_total[1:]
     reward = tf.convert_to_tensor(episode_dict[REWARDS][:-1], dtype=tf.float32)
 
+
+
     # Calculate the TD error
     TD_error = tf.square(reward + next_state_q_total * discount_factor - cur_state_q_total)
 
-    return TD_error
+    return TD_error, correlation_tensor
 
 
-def training(agent, mixNet, sampled_episode_arr, epoch_num=20, batch_size=32, learning_rate=0.0005):
+def training(agent, mixNet, sampled_episode_arr, file_path, epoch_num=5, batch_size=32, learning_rate=0.0005):
     """
     file_path: we will load one agent network and one mix agent, all updates will be performed on them.
     A sample of full episodes are provided.
@@ -143,6 +216,7 @@ def training(agent, mixNet, sampled_episode_arr, epoch_num=20, batch_size=32, le
     optimizer = tf.keras.optimizers.Adam(learning_rate=learning_rate, clipnorm=1.0)  # Example with TensorFlow
 
     for epoch in tqdm(range(epoch_num), "training QMIX: "):
+
         # Track the variables for this episode
         with tf.GradientTape() as tape:
             tape.watch(trainable_variables)
@@ -150,10 +224,20 @@ def training(agent, mixNet, sampled_episode_arr, epoch_num=20, batch_size=32, le
             # Initialize TD_error_arr as an empty tensor
             TD_error_tensor = tf.constant([], dtype=tf.float32)
 
+            # calculate the average correlation for the sample for each agent
+            correlation_agent_zero = 0
+            correlation_agent_one = 0
+            correlation_agent_two = 0
+
             # Iteratively add TD errors from each episode
             for episode_dict in sampled_episode_arr:
                 # Assuming self.get_TD_error returns a tensor
-                cur_TD_error = get_TD_error(episode_dict, agent, mixNet)
+                cur_TD_error, correlation_tensor = get_TD_error(episode_dict, agent, mixNet, file_path)
+                correlation_arr = correlation_tensor.numpy()
+                correlation_agent_zero += correlation_arr[0]
+                correlation_agent_one += correlation_arr[1]
+                correlation_agent_two += correlation_arr[2]
+
 
                 # Handle first iteration
                 if tf.equal(tf.size(TD_error_tensor), 0):
@@ -174,48 +258,62 @@ def training(agent, mixNet, sampled_episode_arr, epoch_num=20, batch_size=32, le
         # Apply gradients separately
         optimizer.apply_gradients(zip(gradients, trainable_variables))
 
+        # save the average correlation
+        correlation_agent_zero /= len(sampled_episode_arr)
+        correlation_agent_one /= len(sampled_episode_arr)
+        correlation_agent_two /= len(sampled_episode_arr)
+        append_values_to_file(correlation_agent_zero,
+                              os.path.join(training_file_path, f"{AGENT_ZERO}_q_val_corelation.txt"))
+        append_values_to_file(correlation_agent_one,
+                              os.path.join(training_file_path, f"{AGENT_ONE}_q_val_corelation.txt"))
+        append_values_to_file(correlation_agent_two,
+                              os.path.join(training_file_path, f"{AGENT_TWO}_q_val_corelation.txt"))
+
     # save models
     agent.save_model(filepath=file_path)
     mixNet.save_model(filepath=file_path)
 
 
 if __name__ == "__main__":
-    file_path = "./data/"
+    training_file_path = "./08_5epoch/"
 
-    if not os.path.exists(file_path):
-        os.makedirs(file_path)
+    if not os.path.exists(training_file_path):
+        os.makedirs(training_file_path)
 
     dp = DataProcessor()
+    dp.epilson = 1
 
     # initial data collection
-    qmix_agent = QMIX(file_path=file_path)
-    current_reward = dp.collect_data(qmix_agent, data_size=2)
+    qmix_agent = QMIX(file_path=training_file_path)
+    current_reward = dp.collect_data(qmix_agent, data_size=32)
     print(f"average current reward {current_reward}")
+    print(f"current epilson is {dp.epilson}")
 
-    append_values_to_file(current_reward, os.path.join(file_path, REWARD_FILENAME))
+    append_values_to_file(current_reward, os.path.join(training_file_path, REWARD_FILENAME))
 
     # take the used agent from q
     agent, mixNet = build_models()
 
-    agent.load_model(filepath=file_path)
-    mixNet.load_model(filepath=file_path)
+    agent.load_model(filepath=training_file_path)
+    mixNet.load_model(filepath=training_file_path)
 
     # save the agent, this is mainly for first initialise
     qmix_agent.save_weights()
 
     while True:
         # in the paper its updated every 200 episodes, lack of computation power so I downscale it
-
         # get a sample of full episode
-        sampled_episode_arr = dp.random_sample(batch_size=2)
+        sampled_episode_arr = dp.random_sample(batch_size=32)
 
-        # training of the models
-        training(agent, mixNet, sampled_episode_arr, epoch_num=20, batch_size=32, learning_rate=0.0005)
+        # training of the models, decrease epoch to 10
+        training(agent, mixNet, sampled_episode_arr, training_file_path, epoch_num=5, batch_size=32, learning_rate=0.0005)
 
         # collect more date with the update model
-        qmix_agent = QMIX(file_path=file_path)
+        qmix_agent = QMIX(file_path=training_file_path)
         current_reward = dp.collect_data(qmix_agent, data_size=32)
+
+        print(f"current epilson is {dp.epilson}")
 
         print(f"average current reward {current_reward}")
 
-        append_values_to_file(current_reward, os.path.join(file_path, REWARD_FILENAME))
+        append_values_to_file(current_reward, os.path.join(training_file_path, REWARD_FILENAME))

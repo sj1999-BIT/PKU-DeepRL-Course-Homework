@@ -14,20 +14,22 @@ import os
 gym.register_envs(ale_py)
 
 # Create Pong environment with rendering for video recording
-env = gym.make("ALE/Pong-v5", render_mode="rgb_array", obs_type="rgb")
+env = gym.make("Hopper-v5", render_mode="rgb_array")
 
 def record_gameplay(duration=90):
     """Record gameplay for specified duration in seconds"""
 
     # Initialize video writer
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-    video_path = "pong_gameplay.mp4"
+    video_path = "video.mp4"
     fps = 30
     frame_width, frame_height = 160, 210  # Default Atari frame size
     video_writer = cv2.VideoWriter(video_path, fourcc, fps, (frame_width, frame_height))
+    
+    
 
     # Initialize agent
-    q_agent = QAgentWithEpilsonAndMoreDepth("results/iter 4 2200 training with DQN/target_agent_weights.pth")
+    q_agent = QAgentWithEpilsonAndMoreDepth("./Policy_nn_weight.pth")
     q_agent.to(device='cuda')
 
     # Setup timers

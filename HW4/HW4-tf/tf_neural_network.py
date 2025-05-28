@@ -241,6 +241,7 @@ class AgentNetwork(tf.keras.Model):
             print(f"Stack trace: {traceback.format_exc()}")
             return False
 
+
 class MixNetwork(tf.keras.Model):
     def __init__(self, input_dim=3, hidden_dim=128, output_dim=1):
         """
@@ -444,49 +445,3 @@ class MixNetwork(tf.keras.Model):
             import traceback
             print(f"Stack trace: {traceback.format_exc()}")
             return False
-
-
-    # def save_weights(self, filepath="./"):
-    #     """
-    #     Save the model weights to a file
-    #     :param filepath: path to save the model weights
-    #     :param timestep: optional timestep to include in filename
-    #     """
-    #     # Create directory if it doesn't exist
-    #     os.makedirs(os.path.dirname(filepath) if os.path.dirname(filepath) else '.', exist_ok=True)
-    #
-    #     filepath = os.path.join(filepath, MIX_WEIGHT_NAME)
-    #
-    #     # Create dictionary to save
-    #     checkpoint = {
-    #         'model_weights': self.get_weights()
-    #     }
-    #
-    #     # Save as numpy array
-    #     np.save(filepath, checkpoint, allow_pickle=True)
-    #     print(f"Model weights saved to {filepath}")
-    #
-    # def load_weights(self, filepath="./"):
-    #     """
-    #     Load the model weights from a file
-    #     :param filepath: path to load the model weights from
-    #     """
-    #
-    #     filepath = os.path.join(filepath, f"{MIX_WEIGHT_NAME}.npy")
-    #
-    #     if not os.path.exists(filepath):
-    #         print(f"No weights file found at {filepath}")
-    #         return False
-    #
-    #     try:
-    #         # Load the checkpoint
-    #         checkpoint = np.load(filepath, allow_pickle=True).item()
-    #
-    #         # Load model weights
-    #         self.set_weights(checkpoint['model_weights'])
-    #
-    #         print(f"Model weights loaded from {filepath}")
-    #         return True
-    #     except Exception as e:
-    #         print(f"Error loading weights: {str(e)}")
-    #         return False

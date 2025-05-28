@@ -2,7 +2,9 @@ from pettingzoo.mpe import simple_spread_v3
 from dataKeys import AGENT_ZERO, AGENT_ONE, AGENT_TWO, ACTIONS, STATES, NEXT_STATES, Q_TOTALS, REWARDS
 from tqdm import tqdm
 from qmix import QMIX, convert_dict_to_arr
+from environment_functions import calculate_reward
 from tf_neural_network import AgentNetwork
+from helper import normalize_episode_rewards
 
 import numpy as np
 import tensorflow as tf
@@ -11,7 +13,7 @@ import torch
 
 
 class DataProcessor:
-    def __init__(self, state_dim=18, maxSize=4000, env=None):
+    def __init__(self, state_dim=18, maxSize=500, env=None):
 
         if env is None:
             self.env = simple_spread_v3.parallel_env(render_mode=None)
@@ -21,6 +23,9 @@ class DataProcessor:
         self.fullEpisodeBuffer = []
 
         self.maxBufferSize = maxSize
+
+        # start of with pure_greedy policy
+        self.epilson = 1
 
     def initiate_empty_buffer(self):
         """
@@ -44,14 +49,16 @@ class DataProcessor:
             max_buffer_size (int): Maximum allowed buffer size for each key
         """
 
-        # Then check if any key exceeds the maximum size
-        current_size = len(self.fullEpisodeBuffer)
-        if current_size > self.maxBufferSize:
-            # Generate random indices to keep
-            indices_to_keep = torch.randperm(current_size)[:self.maxBufferSize]
+        # # Then check if any key exceeds the maximum size
+        # current_size = len(self.fullEpisodeBuffer)
+        # if current_size > self.maxBufferSize:
+        #     # Generate random indices to keep
+        #     indices_to_keep = torch.randperm(current_size)[:self.maxBufferSize]
+        #
+        #     # Apply the same indices to all keys to keep the data aligned
+        #     self.fullEpisodeBuffer = self.fullEpisodeBuffer[indices_to_keep]
 
-            # Apply the same indices to all keys to keep the data aligned
-            self.fullEpisodeBuffer = self.fullEpisodeBuffer[indices_to_keep]
+        self.fullEpisodeBuffer = self.fullEpisodeBuffer[-self.maxBufferSize:]
 
     def collect_single_full_episode(self, qmix_agent: QMIX):
         """
@@ -69,7 +76,7 @@ class DataProcessor:
             single_episode_buffer[STATES].append(convert_dict_to_arr(observation_dict))
 
             # get actions for previous state
-            actions_dict = qmix_agent.get_actions(observation_dict)
+            actions_dict = qmix_agent.get_actions(observation_dict, self.epilson)
 
             # record action taken for current state
             single_episode_buffer[ACTIONS].append(convert_dict_to_arr(actions_dict))
@@ -80,12 +87,16 @@ class DataProcessor:
             single_episode_buffer[NEXT_STATES].append(convert_dict_to_arr(observation_dict))
 
             # record reward
-            single_episode_buffer[REWARDS].append(sum(convert_dict_to_arr(reward_dict)))
+            single_episode_buffer[REWARDS].append(calculate_reward(observation_dict))
 
         single_episode_buffer[STATES] = np.array(single_episode_buffer[STATES])
         single_episode_buffer[ACTIONS] = np.array(single_episode_buffer[ACTIONS])
         single_episode_buffer[NEXT_STATES] = np.array(single_episode_buffer[NEXT_STATES])
         single_episode_buffer[REWARDS] = np.array(single_episode_buffer[REWARDS])
+
+        if self.epilson > 0.05:
+            # each episode collected we decrease the greedy policy until it hits 0.05
+            self.epilson -= (1-0.95) / 200
 
         return single_episode_buffer
 
@@ -94,7 +105,13 @@ class DataProcessor:
         for step in tqdm(range(data_size), desc="collecting full episode data"):
             single_episode_buffer = self.collect_single_full_episode(qmix_agent)
             total_reward += np.sum(single_episode_buffer[REWARDS])
+
+            # normalize the reward
+            # single_episode_buffer[REWARDS] = normalize_episode_rewards(single_episode_buffer[REWARDS])
+
             self.fullEpisodeBuffer.append(single_episode_buffer)
+        # only keep the most recent 4000
+        self.update_transition_buffer()
         return total_reward / data_size
 
     def random_sample(self, batch_size=64):
@@ -113,10 +130,6 @@ class DataProcessor:
         return new_array
 
 
-
-
-
-
 if __name__ == "__main__":
     dp = DataProcessor()
 
@@ -127,17 +140,3 @@ if __name__ == "__main__":
     sample_episode_arr = dp.random_sample(batch_size=32)
 
     test_qmix_agent.training(sample_episode_arr, batch_size=32)
-
-    # single_agent = AgentNetwork()
-    #
-    # single_agent.call(episode[STATES][:, :18], episode[ACTIONS][:, :1])
-    #
-    # hidden_state_arr_batch = single_agent.hidden_state
-    # single_agent.hidden_state = None
-    # for cur_state, prev_action in zip(episode[STATES], episode[ACTIONS]):
-    #     single_agent.call(cur_state[:18], prev_action[:1])
-    #
-    # hidden_state_arr_loop = single_agent.hidden_state
-    #
-    # # Check if tensors are exactly equal
-    # print(tf.reduce_mean(tf.abs(hidden_state_arr_loop-hidden_state_arr_batch)))

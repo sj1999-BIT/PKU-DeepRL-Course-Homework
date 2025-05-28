@@ -29,7 +29,12 @@ if __name__ == "__main__":
 
     # 3x3x4
     # batch:3, input:3, output: 4
-    weights = [[[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], ],
-               [[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1], ],
-               [[2, 2, 2, 2], [2, 2, 2, 2], [2, 2, 2, 2], ]]
 
+    arr = []
+
+    while len(arr) < 3000:
+        arr.append(len(arr))
+
+    arr = arr[-4000:]
+
+    print(arr)
